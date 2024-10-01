@@ -13,9 +13,14 @@ El objetivo de este proyecto es desarrollar un sistema de asignación de tareas 
 
 1. **Back-end (.NET)**:
    - Creé una REST API utilizando ASP.NET Core.
+   - Arquitectura limpia con CQRS
+   - Automapeer
+   - Inyección de dependencias
+   - Serilog
    - Implementé Entity Framework Core para la interacción con la base de datos.
    - Incorporé autenticación con JWT.
    - Definí las entidades Usuario, Rol y Tarea, con las validaciones necesarias.
+     
 
 2. **Front-end (Angular)**:
    - Desarrollé una aplicación en Angular.
