@@ -1,0 +1,453 @@
+2024-10-01 00:05:02.232 -05:00 [INF] Logging from null/null.
+2024-10-01 00:05:02.244 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:05:20.110 -05:00 [INF] Logging from null/null.
+2024-10-01 00:05:20.115 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:05:20.119 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:06:20.919 -05:00 [INF] Logging from null/null.
+2024-10-01 00:06:20.930 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:06:25.694 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:22:47.697 -05:00 [INF] Logging from null/null.
+2024-10-01 00:22:47.702 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:23:15.066 -05:00 [INF] Logging from null/null.
+2024-10-01 00:23:15.192 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:25:41.767 -05:00 [INF] Logging from null/null.
+2024-10-01 00:25:41.784 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:29:44.027 -05:00 [INF] Logging from null/null.
+2024-10-01 00:29:44.107 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:29:47.031 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:29:54.960 -05:00 [INF] Logging from null/null.
+2024-10-01 00:29:54.967 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:36:23.389 -05:00 [INF] Logging from null/null.
+2024-10-01 00:36:23.512 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:36:43.527 -05:00 [INF] Logging from null/null.
+2024-10-01 00:36:43.539 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:36:44.721 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:36:45.701 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:40:37.218 -05:00 [INF] Logging from null/null.
+2024-10-01 00:40:37.223 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:41:17.123 -05:00 [INF] Logging from null/null.
+2024-10-01 00:41:17.128 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:41:24.417 -05:00 [INF] Logging from null/null.
+2024-10-01 00:41:24.423 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:41:25.740 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:42:22.910 -05:00 [INF] Logging from null/null.
+2024-10-01 00:42:22.916 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:42:39.549 -05:00 [INF] Logging from null/null.
+2024-10-01 00:42:39.557 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:42:41.030 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:42:42.201 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 00:55:01.399 -05:00 [INF] Logging from User/Get.
+2024-10-01 00:55:01.539 -05:00 [ERR] Exception occurred while processing the request.
+System.InvalidOperationException: No service for type 'TaskingSystem.Application.CQRS.Common.IQueryHandler`2[TaskingSystem.Application.CQRS.Queries.GetUserFilterQuery,TaskingSystem.Application.Responses.ApiResponse`1[TaskingSystem.Domain.Entities.PagedList`1[TaskingSystem.Application.DTOs.WorkItemDto]]]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at TaskingSystem.Presentation.Dispatcher.QueryDispatcher.Dispatch[TQuery,TQueryResult](TQuery query, CancellationToken cancellation) in C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Presentation\Dispatcher\QueryDispatcher.cs:line 12
+   at TaskingSystem.Presentation.Controllers.UserController.Get(GetUserFilterQuery query, CancellationToken cancellationToken) in C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Presentation\Controllers\UserController.cs:line 24
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at TaskingSystem.Presentation.Middleware.LoggingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Presentation\Middleware\LoggingMiddleware.cs:line 42
+2024-10-01 00:55:01.592 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No service for type 'TaskingSystem.Application.CQRS.Common.IQueryHandler`2[TaskingSystem.Application.CQRS.Queries.GetUserFilterQuery,TaskingSystem.Application.Responses.ApiResponse`1[TaskingSystem.Domain.Entities.PagedList`1[TaskingSystem.Application.DTOs.WorkItemDto]]]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at TaskingSystem.Presentation.Dispatcher.QueryDispatcher.Dispatch[TQuery,TQueryResult](TQuery query, CancellationToken cancellation) in C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Presentation\Dispatcher\QueryDispatcher.cs:line 12
+   at TaskingSystem.Presentation.Controllers.UserController.Get(GetUserFilterQuery query, CancellationToken cancellationToken) in C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Presentation\Controllers\UserController.cs:line 24
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at TaskingSystem.Presentation.Middleware.LoggingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Presentation\Middleware\LoggingMiddleware.cs:line 42
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 00:55:25.458 -05:00 [INF] Logging from User/Get.
+2024-10-01 00:55:25.506 -05:00 [ERR] Exception occurred while processing the request.
+System.InvalidOperationException: No service for type 'TaskingSystem.Application.CQRS.Common.IQueryHandler`2[TaskingSystem.Application.CQRS.Queries.GetUserFilterQuery,TaskingSystem.Application.Responses.ApiResponse`1[TaskingSystem.Domain.Entities.PagedList`1[TaskingSystem.Application.DTOs.WorkItemDto]]]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at TaskingSystem.Presentation.Dispatcher.QueryDispatcher.Dispatch[TQuery,TQueryResult](TQuery query, CancellationToken cancellation) in C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Presentation\Dispatcher\QueryDispatcher.cs:line 12
+   at TaskingSystem.Presentation.Controllers.UserController.Get(GetUserFilterQuery query, CancellationToken cancellationToken) in C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Presentation\Controllers\UserController.cs:line 24
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at TaskingSystem.Presentation.Middleware.LoggingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Presentation\Middleware\LoggingMiddleware.cs:line 42
+2024-10-01 00:55:25.529 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No service for type 'TaskingSystem.Application.CQRS.Common.IQueryHandler`2[TaskingSystem.Application.CQRS.Queries.GetUserFilterQuery,TaskingSystem.Application.Responses.ApiResponse`1[TaskingSystem.Domain.Entities.PagedList`1[TaskingSystem.Application.DTOs.WorkItemDto]]]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at TaskingSystem.Presentation.Dispatcher.QueryDispatcher.Dispatch[TQuery,TQueryResult](TQuery query, CancellationToken cancellation) in C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Presentation\Dispatcher\QueryDispatcher.cs:line 12
+   at TaskingSystem.Presentation.Controllers.UserController.Get(GetUserFilterQuery query, CancellationToken cancellationToken) in C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Presentation\Controllers\UserController.cs:line 24
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at TaskingSystem.Presentation.Middleware.LoggingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Presentation\Middleware\LoggingMiddleware.cs:line 42
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 00:56:30.012 -05:00 [INF] Logging from User/Get.
+2024-10-01 00:56:30.953 -05:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-10-01 01:03:32.777 -05:00 [INF] Logging from null/null.
+2024-10-01 01:03:32.838 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:03:39.763 -05:00 [INF] Logging from null/null.
+2024-10-01 01:03:39.770 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:03:45.269 -05:00 [INF] Logging from null/null.
+2024-10-01 01:03:45.286 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 01:03:46.472 -05:00 [INF] Logging from null/null.
+2024-10-01 01:03:46.481 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:03:47.439 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 01:03:48.443 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:06:46.142 -05:00 [INF] Logging from null/null.
+2024-10-01 01:06:46.147 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:07:46.769 -05:00 [INF] Logging from null/null.
+2024-10-01 01:07:46.773 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:08:15.500 -05:00 [INF] Logging from null/null.
+2024-10-01 01:08:15.512 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:08:19.321 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:09:11.749 -05:00 [INF] Logging from null/null.
+2024-10-01 01:09:11.753 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:09:30.260 -05:00 [INF] Logging from null/null.
+2024-10-01 01:09:30.273 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:09:37.386 -05:00 [INF] Logging from null/null.
+2024-10-01 01:09:37.393 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:10:17.743 -05:00 [INF] Logging from null/null.
+2024-10-01 01:10:17.748 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:10:44.007 -05:00 [INF] Logging from null/null.
+2024-10-01 01:10:44.016 -05:00 [INF] Logging from User/GetAllRole.
+2024-10-01 01:10:45.247 -05:00 [INF] Logging from null/null.
+2024-10-01 01:10:45.256 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:11:11.152 -05:00 [INF] Logging from null/null.
+2024-10-01 01:11:11.160 -05:00 [INF] Logging from Auth/Authenticate.
+2024-10-01 01:11:11.195 -05:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-10-01 01:11:11.309 -05:00 [INF] Logging from null/null.
+2024-10-01 01:11:11.334 -05:00 [INF] Logging from null/null.
+2024-10-01 01:11:11.336 -05:00 [INF] Logging from null/null.
+2024-10-01 01:11:11.340 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:11:11.336 -05:00 [INF] Logging from null/null.
+2024-10-01 01:11:20.303 -05:00 [INF] Logging from null/null.
+2024-10-01 01:11:20.312 -05:00 [INF] Logging from WorkItem/GetTaskById.
+2024-10-01 01:11:20.343 -05:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-10-01 01:11:25.180 -05:00 [INF] Logging from WorkItem/GetTaskById.
+2024-10-01 01:11:30.218 -05:00 [INF] Logging from null/null.
+2024-10-01 01:11:30.226 -05:00 [INF] Logging from WorkItem/GetTaskById.
+2024-10-01 01:11:36.502 -05:00 [INF] Logging from null/null.
+2024-10-01 01:11:36.512 -05:00 [INF] Logging from WorkItem/GetTaskById.
+2024-10-01 01:11:38.888 -05:00 [INF] Logging from WorkItem/GetTaskById.
+2024-10-01 01:11:52.212 -05:00 [INF] Logging from null/null.
+2024-10-01 01:11:52.220 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:11:56.506 -05:00 [INF] Logging from null/null.
+2024-10-01 01:11:56.507 -05:00 [INF] Logging from null/null.
+2024-10-01 01:11:56.507 -05:00 [INF] Logging from null/null.
+2024-10-01 01:11:56.507 -05:00 [INF] Logging from null/null.
+2024-10-01 01:11:56.506 -05:00 [INF] Logging from null/null.
+2024-10-01 01:11:56.507 -05:00 [INF] Logging from null/null.
+2024-10-01 01:11:56.517 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:11:57.069 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:11:57.603 -05:00 [INF] Logging from null/null.
+2024-10-01 01:11:57.611 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:11:57.987 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:11:58.373 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:11:58.879 -05:00 [INF] Logging from null/null.
+2024-10-01 01:11:58.886 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:12:17.586 -05:00 [INF] Logging from null/null.
+2024-10-01 01:12:17.588 -05:00 [INF] Logging from null/null.
+2024-10-01 01:12:17.588 -05:00 [INF] Logging from null/null.
+2024-10-01 01:12:17.587 -05:00 [INF] Logging from null/null.
+2024-10-01 01:12:17.591 -05:00 [INF] Logging from null/null.
+2024-10-01 01:12:17.596 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:12:17.590 -05:00 [INF] Logging from null/null.
+2024-10-01 01:12:18.011 -05:00 [INF] Logging from null/null.
+2024-10-01 01:12:18.016 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:12:18.493 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:12:19.371 -05:00 [INF] Logging from null/null.
+2024-10-01 01:12:19.377 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:12:19.795 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:15:39.915 -05:00 [INF] Logging from null/null.
+2024-10-01 01:15:39.915 -05:00 [INF] Logging from null/null.
+2024-10-01 01:15:39.915 -05:00 [INF] Logging from null/null.
+2024-10-01 01:15:39.927 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:15:39.917 -05:00 [INF] Logging from null/null.
+2024-10-01 01:17:05.493 -05:00 [INF] Logging from null/null.
+2024-10-01 01:17:05.493 -05:00 [INF] Logging from null/null.
+2024-10-01 01:17:05.505 -05:00 [INF] Logging from null/null.
+2024-10-01 01:17:05.494 -05:00 [INF] Logging from null/null.
+2024-10-01 01:17:05.510 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:17:06.408 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:17:08.014 -05:00 [INF] Logging from null/null.
+2024-10-01 01:17:08.019 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:17:08.606 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:17:11.442 -05:00 [INF] Logging from null/null.
+2024-10-01 01:17:11.446 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:18:38.779 -05:00 [INF] Logging from null/null.
+2024-10-01 01:18:38.788 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:18:42.034 -05:00 [INF] Logging from null/null.
+2024-10-01 01:18:42.042 -05:00 [INF] Logging from Auth/Authenticate.
+2024-10-01 01:18:42.112 -05:00 [INF] Logging from null/null.
+2024-10-01 01:18:42.113 -05:00 [INF] Logging from null/null.
+2024-10-01 01:18:42.113 -05:00 [INF] Logging from null/null.
+2024-10-01 01:18:42.113 -05:00 [INF] Logging from null/null.
+2024-10-01 01:18:42.122 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:18:42.132 -05:00 [INF] Logging from Master/GetStatus.
+2024-10-01 01:18:42.130 -05:00 [INF] Logging from User/GetUserById.
+2024-10-01 01:18:42.173 -05:00 [INF] Logging from Master/GetStatus.
+2024-10-01 01:18:51.935 -05:00 [INF] Logging from null/null.
+2024-10-01 01:18:51.940 -05:00 [INF] Logging from Auth/Authenticate.
+2024-10-01 01:18:52.019 -05:00 [INF] Logging from null/null.
+2024-10-01 01:18:52.025 -05:00 [INF] Logging from null/null.
+2024-10-01 01:18:52.027 -05:00 [INF] Logging from null/null.
+2024-10-01 01:18:52.027 -05:00 [INF] Logging from null/null.
+2024-10-01 01:18:52.029 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:18:55.421 -05:00 [INF] Logging from null/null.
+2024-10-01 01:18:55.428 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:18:56.178 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:18:56.654 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:19:04.909 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:04.910 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:04.910 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:04.917 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:19:04.910 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:06.577 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:06.583 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:19:13.723 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:13.723 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:13.723 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:13.731 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:19:13.723 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:13.723 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:13.723 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:27.197 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:27.202 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:27.197 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:27.202 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:27.221 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:19:30.899 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:30.907 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:19:32.701 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:32.701 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:32.702 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:32.702 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:32.711 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:19:42.138 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:42.138 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:42.139 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:42.139 -05:00 [INF] Logging from null/null.
+2024-10-01 01:19:42.149 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:20:29.956 -05:00 [INF] Logging from null/null.
+2024-10-01 01:20:29.956 -05:00 [INF] Logging from null/null.
+2024-10-01 01:20:29.956 -05:00 [INF] Logging from null/null.
+2024-10-01 01:20:29.957 -05:00 [INF] Logging from null/null.
+2024-10-01 01:20:29.963 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:20:47.537 -05:00 [INF] Logging from null/null.
+2024-10-01 01:20:47.537 -05:00 [INF] Logging from null/null.
+2024-10-01 01:20:47.538 -05:00 [INF] Logging from null/null.
+2024-10-01 01:20:47.539 -05:00 [INF] Logging from null/null.
+2024-10-01 01:20:47.550 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:21:51.187 -05:00 [ERR] Failed executing DbCommand (5ms) [Parameters=[@__filters_IdUser_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [dbo].[Task] AS [t]
+WHERE [t].[Active] = CAST(1 AS bit) AND [t].[IdUser] = @__filters_IdUser_0
+2024-10-01 01:21:51.218 -05:00 [ERR] An exception occurred while iterating over the results of a query for context type 'TaskingSystem.Infrastructure.Persistencia.ApplicationDbContext'.
+System.InvalidOperationException: There is already an open DataReader associated with this Connection which must be closed first.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: There is already an open DataReader associated with this Connection which must be closed first.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-10-01 01:22:00.179 -05:00 [INF] Logging from null/null.
+2024-10-01 01:22:00.179 -05:00 [INF] Logging from null/null.
+2024-10-01 01:22:00.180 -05:00 [INF] Logging from null/null.
+2024-10-01 01:22:00.179 -05:00 [INF] Logging from null/null.
+2024-10-01 01:22:00.185 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:22:08.945 -05:00 [INF] Logging from null/null.
+2024-10-01 01:22:08.945 -05:00 [INF] Logging from null/null.
+2024-10-01 01:22:08.946 -05:00 [INF] Logging from null/null.
+2024-10-01 01:22:08.946 -05:00 [INF] Logging from null/null.
+2024-10-01 01:22:08.945 -05:00 [INF] Logging from null/null.
+2024-10-01 01:22:08.962 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:22:08.946 -05:00 [INF] Logging from null/null.
+2024-10-01 01:22:09.483 -05:00 [INF] Logging from null/null.
+2024-10-01 01:22:09.488 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:25:26.892 -05:00 [INF] Logging from null/null.
+2024-10-01 01:25:26.894 -05:00 [INF] Logging from null/null.
+2024-10-01 01:25:26.893 -05:00 [INF] Logging from null/null.
+2024-10-01 01:25:26.902 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:25:26.892 -05:00 [INF] Logging from null/null.
+2024-10-01 01:25:36.764 -05:00 [INF] Logging from null/null.
+2024-10-01 01:25:36.764 -05:00 [INF] Logging from null/null.
+2024-10-01 01:25:36.765 -05:00 [INF] Logging from null/null.
+2024-10-01 01:25:36.767 -05:00 [INF] Logging from null/null.
+2024-10-01 01:25:36.772 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:27:16.796 -05:00 [INF] Logging from null/null.
+2024-10-01 01:27:16.797 -05:00 [INF] Logging from null/null.
+2024-10-01 01:27:16.799 -05:00 [INF] Logging from null/null.
+2024-10-01 01:27:16.798 -05:00 [INF] Logging from null/null.
+2024-10-01 01:27:16.799 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:30:07.796 -05:00 [INF] Logging from null/null.
+2024-10-01 01:30:07.797 -05:00 [INF] Logging from null/null.
+2024-10-01 01:30:07.797 -05:00 [INF] Logging from null/null.
+2024-10-01 01:30:07.804 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:30:07.797 -05:00 [INF] Logging from null/null.
+2024-10-01 01:30:09.850 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:30:17.750 -05:00 [INF] Logging from null/null.
+2024-10-01 01:30:17.752 -05:00 [INF] Logging from null/null.
+2024-10-01 01:30:17.753 -05:00 [INF] Logging from null/null.
+2024-10-01 01:30:17.758 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:30:17.752 -05:00 [INF] Logging from null/null.
+2024-10-01 01:30:20.426 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:30:21.560 -05:00 [INF] Logging from null/null.
+2024-10-01 01:30:21.564 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:31:01.134 -05:00 [INF] Logging from null/null.
+2024-10-01 01:31:01.139 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:31:04.357 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:31:26.079 -05:00 [INF] Logging from null/null.
+2024-10-01 01:31:26.085 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:31:28.877 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:32:32.715 -05:00 [INF] Logging from null/null.
+2024-10-01 01:32:32.721 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:38:19.267 -05:00 [INF] Logging from null/null.
+2024-10-01 01:38:19.273 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:38:22.404 -05:00 [INF] Logging from null/null.
+2024-10-01 01:38:22.412 -05:00 [INF] Logging from null/null.
+2024-10-01 01:38:22.413 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:38:22.416 -05:00 [INF] Logging from null/null.
+2024-10-01 01:38:22.412 -05:00 [INF] Logging from null/null.
+2024-10-01 01:38:29.530 -05:00 [INF] Logging from null/null.
+2024-10-01 01:38:29.533 -05:00 [INF] Logging from null/null.
+2024-10-01 01:38:29.535 -05:00 [INF] Logging from null/null.
+2024-10-01 01:38:29.535 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:39:14.149 -05:00 [INF] Logging from null/null.
+2024-10-01 01:39:14.152 -05:00 [INF] Logging from null/null.
+2024-10-01 01:39:14.153 -05:00 [INF] Logging from null/null.
+2024-10-01 01:39:14.153 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:39:56.801 -05:00 [INF] Logging from null/null.
+2024-10-01 01:39:56.805 -05:00 [INF] Logging from null/null.
+2024-10-01 01:39:56.807 -05:00 [INF] Logging from null/null.
+2024-10-01 01:39:56.807 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:41:14.782 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:14.786 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:14.790 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:14.790 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:41:18.596 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:41:21.522 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:21.526 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:21.530 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:21.530 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:41:21.531 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:29.172 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:29.176 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:29.177 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:29.177 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:41:33.976 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:33.980 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:41:34.675 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:34.675 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:34.675 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:34.675 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:34.698 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:41:35.153 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:41:35.899 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:41:40.663 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:40.663 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:40.665 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:40.663 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:40.670 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:41:43.633 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:43.641 -05:00 [INF] Logging from Auth/Authenticate.
+2024-10-01 01:41:43.698 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:43.698 -05:00 [INF] Logging from User/GetUserById.
+2024-10-01 01:41:43.698 -05:00 [INF] Logging from Master/GetStatus.
+2024-10-01 01:41:43.706 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:41:43.739 -05:00 [INF] Logging from Master/GetStatus.
+2024-10-01 01:41:44.746 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:44.753 -05:00 [INF] Logging from User/Get.
+2024-10-01 01:41:45.723 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:45.723 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:45.724 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:45.724 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:45.731 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:41:45.732 -05:00 [INF] Logging from User/GetUserById.
+2024-10-01 01:41:45.735 -05:00 [INF] Logging from Master/GetStatus.
+2024-10-01 01:41:45.723 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:45.723 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:45.758 -05:00 [INF] Logging from User/GetUserById.
+2024-10-01 01:41:45.764 -05:00 [INF] Logging from Master/GetStatus.
+2024-10-01 01:41:45.772 -05:00 [INF] Logging from Master/GetStatus.
+2024-10-01 01:41:46.116 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:41:46.117 -05:00 [INF] Logging from User/GetUserById.
+2024-10-01 01:41:46.117 -05:00 [INF] Logging from Master/GetStatus.
+2024-10-01 01:41:46.142 -05:00 [INF] Logging from Master/GetStatus.
+2024-10-01 01:41:59.666 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:59.674 -05:00 [INF] Logging from Auth/Authenticate.
+2024-10-01 01:41:59.725 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:59.726 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:59.726 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:59.727 -05:00 [INF] Logging from null/null.
+2024-10-01 01:41:59.733 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:41:59.740 -05:00 [INF] Logging from User/GetUserById.
+2024-10-01 01:42:06.745 -05:00 [INF] Logging from null/null.
+2024-10-01 01:42:06.745 -05:00 [INF] Logging from null/null.
+2024-10-01 01:42:06.745 -05:00 [INF] Logging from null/null.
+2024-10-01 01:42:06.745 -05:00 [INF] Logging from null/null.
+2024-10-01 01:42:06.751 -05:00 [INF] Logging from User/GetUserById.
+2024-10-01 01:42:06.754 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:42:09.529 -05:00 [INF] Logging from null/null.
+2024-10-01 01:42:09.529 -05:00 [INF] Logging from User/GetUserById.
+2024-10-01 01:42:09.545 -05:00 [INF] Logging from WorkItem/Get.
+2024-10-01 01:42:09.549 -05:00 [INF] Logging from User/GetUserById.
+2024-10-01 01:42:09.934 -05:00 [INF] Logging from User/GetUserById.
+2024-10-01 01:42:09.934 -05:00 [INF] Logging from WorkItem/Get.

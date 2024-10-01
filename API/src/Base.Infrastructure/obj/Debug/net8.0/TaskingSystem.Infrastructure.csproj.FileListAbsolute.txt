@@ -1,0 +1,15 @@
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Infrastructure\bin\Debug\net8.0\TaskingSystem.Infrastructure.deps.json
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Infrastructure\bin\Debug\net8.0\TaskingSystem.Infrastructure.dll
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Infrastructure\bin\Debug\net8.0\TaskingSystem.Infrastructure.pdb
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Infrastructure\bin\Debug\net8.0\TaskingSystem.Domain.dll
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Infrastructure\bin\Debug\net8.0\TaskingSystem.Domain.pdb
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Infrastructure\obj\Debug\net8.0\TaskingSystem.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Infrastructure\obj\Debug\net8.0\TaskingSystem.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Infrastructure\obj\Debug\net8.0\TaskingSystem.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Infrastructure\obj\Debug\net8.0\TaskingSystem.Infrastructure.AssemblyInfo.cs
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Infrastructure\obj\Debug\net8.0\TaskingSystem.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Infrastructure\obj\Debug\net8.0\TaskingS.E95A1B06.Up2Date
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Infrastructure\obj\Debug\net8.0\TaskingSystem.Infrastructure.dll
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Infrastructure\obj\Debug\net8.0\refint\TaskingSystem.Infrastructure.dll
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Infrastructure\obj\Debug\net8.0\TaskingSystem.Infrastructure.pdb
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Infrastructure\obj\Debug\net8.0\ref\TaskingSystem.Infrastructure.dll

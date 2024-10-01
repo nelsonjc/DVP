@@ -1,0 +1,11 @@
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Domain\bin\Debug\net8.0\TaskingSystem.Domain.deps.json
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Domain\bin\Debug\net8.0\TaskingSystem.Domain.dll
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Domain\bin\Debug\net8.0\TaskingSystem.Domain.pdb
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Domain\obj\Debug\net8.0\TaskingSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Domain\obj\Debug\net8.0\TaskingSystem.Domain.AssemblyInfoInputs.cache
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Domain\obj\Debug\net8.0\TaskingSystem.Domain.AssemblyInfo.cs
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Domain\obj\Debug\net8.0\TaskingSystem.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Domain\obj\Debug\net8.0\TaskingSystem.Domain.dll
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Domain\obj\Debug\net8.0\refint\TaskingSystem.Domain.dll
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Domain\obj\Debug\net8.0\TaskingSystem.Domain.pdb
+C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Domain\obj\Debug\net8.0\ref\TaskingSystem.Domain.dll

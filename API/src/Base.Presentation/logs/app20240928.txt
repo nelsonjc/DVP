@@ -1,0 +1,389 @@
+2024-09-28 00:02:22.214 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 00:04:24.977 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 00:55:32.043 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 00:56:03.629 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 00:56:23.436 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 01:00:12.396 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 01:01:09.937 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 01:02:05.748 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 01:02:12.988 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 01:03:48.112 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 01:03:53.060 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 01:04:07.683 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 01:07:40.267 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 01:08:02.903 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 01:08:22.097 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 01:08:32.794 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 01:09:08.270 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 01:09:40.032 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 01:10:31.653 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 01:11:05.164 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 01:11:22.549 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 01:12:53.831 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 01:13:22.053 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 01:14:47.559 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 01:15:59.001 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 01:22:43.612 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 01:23:26.702 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 01:25:28.292 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 01:26:01.795 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 01:29:10.295 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 01:29:41.753 -05:00 [INF] Logging from User/CreateUser.
+2024-09-28 01:30:36.039 -05:00 [ERR] Failed executing DbCommand (26ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Boolean), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 250) (DbType = AnsiString), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (Size = 500) (DbType = AnsiString), @p9='?' (Size = 50) (DbType = AnsiString)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [security].[User] ([IdUser], [Active], [DateCreated], [DateUpdated], [FullName], [IdRole], [IdUserCreated], [IdUserUpdated], [Password], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2024-09-28 01:30:36.075 -05:00 [ERR] An exception occurred in the database while saving changes for context type 'TaskingSystem.Infrastructure.Persistencia.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'security.User' with unique index 'IX_User_UserName'. The duplicate key value is (nelson).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:0acfe9fc-d005-49cc-9221-e533cffd4cc7
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'security.User' with unique index 'IX_User_UserName'. The duplicate key value is (nelson).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:0acfe9fc-d005-49cc-9221-e533cffd4cc7
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-09-28 01:31:19.906 -05:00 [INF] Logging from User/CreateUser.
+2024-09-28 01:31:22.293 -05:00 [ERR] Exception occurred while processing the request.
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at TaskingSystem.Presentation.Middleware.LoggingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Presentation\Middleware\LoggingMiddleware.cs:line 42
+2024-09-28 01:31:22.338 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at TaskingSystem.Presentation.Middleware.LoggingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\Nelson Jaramillo\Develop\DVS\API\src\Base.Presentation\Middleware\LoggingMiddleware.cs:line 42
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-09-28 01:32:04.270 -05:00 [INF] Logging from User/CreateUser.
+2024-09-28 01:33:12.598 -05:00 [INF] Logging from User/CreateUser.
+2024-09-28 01:33:23.420 -05:00 [INF] Logging from User/CreateUser.
+2024-09-28 01:35:44.876 -05:00 [INF] Logging from User/CreateUser.
+2024-09-28 01:36:15.142 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 01:36:23.775 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 01:44:29.724 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 02:11:38.329 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 02:12:20.645 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 02:12:23.421 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 02:12:33.065 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 02:15:53.007 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 02:17:43.400 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 02:18:11.077 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 02:19:20.609 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 02:19:43.619 -05:00 [INF] Logging from User/CreateUser.
+2024-09-28 02:19:43.755 -05:00 [ERR] Failed executing DbCommand (14ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Boolean), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 250) (DbType = AnsiString), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (Size = 500) (DbType = AnsiString), @p9='?' (Size = 50) (DbType = AnsiString)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [security].[User] ([IdUser], [Active], [DateCreated], [DateUpdated], [FullName], [IdRole], [IdUserCreated], [IdUserUpdated], [Password], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2024-09-28 02:19:43.795 -05:00 [ERR] An exception occurred in the database while saving changes for context type 'TaskingSystem.Infrastructure.Persistencia.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'security.User' with unique index 'IX_User_UserName'. The duplicate key value is (camil).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:37be0c47-0bac-4d7e-8f49-9509f83b9b08
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'security.User' with unique index 'IX_User_UserName'. The duplicate key value is (camil).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:37be0c47-0bac-4d7e-8f49-9509f83b9b08
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-09-28 02:40:02.595 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 02:40:56.680 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 02:41:52.190 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 02:42:00.466 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 02:42:44.889 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 02:43:17.548 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:15:42.732 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:15:56.378 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:17:01.108 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:17:48.283 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:21:55.406 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:22:41.599 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:23:18.142 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:27:34.263 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:29:38.517 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:30:10.380 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:33:20.180 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:33:55.977 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:38:32.730 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:39:03.303 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:40:29.987 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:41:47.340 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:42:04.834 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:45:09.350 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:46:03.038 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:46:07.882 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:46:37.090 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:46:58.417 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:46:59.051 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:47:00.562 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:47:10.368 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:49:49.011 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:50:07.347 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:50:21.332 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:50:47.304 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:50:59.254 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:51:04.362 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:51:19.171 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:56:01.215 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:56:09.855 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 03:56:18.336 -05:00 [INF] Logging from WorkItem/Get.
+2024-09-28 17:52:48.467 -05:00 [INF] Logging from null/null.
+2024-09-28 17:52:58.068 -05:00 [INF] Logging from null/null.
+2024-09-28 17:53:04.819 -05:00 [INF] Logging from null/null.
+2024-09-28 17:53:18.557 -05:00 [INF] Logging from null/null.
+2024-09-28 17:53:29.042 -05:00 [INF] Logging from null/null.
+2024-09-28 17:54:20.392 -05:00 [INF] Logging from null/null.
+2024-09-28 17:54:35.923 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 17:54:42.994 -05:00 [INF] Logging from null/null.
+2024-09-28 17:55:01.198 -05:00 [INF] Logging from null/null.
+2024-09-28 17:55:02.233 -05:00 [INF] Logging from null/null.
+2024-09-28 17:55:49.024 -05:00 [INF] Logging from null/null.
+2024-09-28 17:56:35.862 -05:00 [INF] Logging from null/null.
+2024-09-28 17:59:02.806 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 17:59:14.864 -05:00 [INF] Logging from null/null.
+2024-09-28 18:01:33.721 -05:00 [INF] Logging from null/null.
+2024-09-28 18:03:14.216 -05:00 [INF] Logging from null/null.
+2024-09-28 18:03:14.260 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 18:04:29.959 -05:00 [INF] Logging from null/null.
+2024-09-28 18:04:29.967 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 18:08:26.989 -05:00 [INF] Logging from null/null.
+2024-09-28 18:08:26.996 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 18:08:28.978 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 18:08:30.983 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 18:08:55.336 -05:00 [INF] Logging from null/null.
+2024-09-28 18:08:55.347 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 18:14:31.241 -05:00 [INF] Logging from null/null.
+2024-09-28 18:14:31.248 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 18:23:25.161 -05:00 [INF] Logging from null/null.
+2024-09-28 18:23:25.168 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 18:28:18.080 -05:00 [INF] Logging from null/null.
+2024-09-28 18:28:18.085 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 18:32:34.718 -05:00 [INF] Logging from null/null.
+2024-09-28 18:32:34.732 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 18:49:44.419 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 20:04:50.425 -05:00 [INF] Logging from null/null.
+2024-09-28 20:04:50.467 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 20:12:15.106 -05:00 [INF] Logging from null/null.
+2024-09-28 20:12:15.112 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 20:16:03.364 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 21:22:05.583 -05:00 [INF] Logging from null/null.
+2024-09-28 21:22:05.593 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 21:24:31.292 -05:00 [INF] Logging from null/null.
+2024-09-28 21:24:31.299 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 21:24:36.134 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 21:24:49.336 -05:00 [INF] Logging from null/null.
+2024-09-28 21:24:49.343 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 21:57:22.978 -05:00 [INF] Logging from null/null.
+2024-09-28 21:57:22.991 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:24:01.647 -05:00 [INF] Logging from null/null.
+2024-09-28 22:24:01.660 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:31:01.094 -05:00 [INF] Logging from null/null.
+2024-09-28 22:31:01.107 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:31:06.798 -05:00 [INF] Logging from null/null.
+2024-09-28 22:31:06.806 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:31:07.639 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:31:14.041 -05:00 [INF] Logging from null/null.
+2024-09-28 22:31:14.047 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:31:30.105 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:31:34.323 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:31:42.642 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:31:56.582 -05:00 [INF] Logging from User/GetUserById.
+2024-09-28 22:32:13.646 -05:00 [INF] Logging from null/null.
+2024-09-28 22:32:13.653 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:32:14.187 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:32:18.176 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:32:39.973 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:33:56.243 -05:00 [INF] Logging from null/null.
+2024-09-28 22:33:56.250 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:33:59.751 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:34:13.073 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:35:14.102 -05:00 [INF] Logging from null/null.
+2024-09-28 22:35:14.108 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:35:28.700 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:37:02.087 -05:00 [INF] Logging from null/null.
+2024-09-28 22:37:02.095 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:38:16.320 -05:00 [INF] Logging from null/null.
+2024-09-28 22:38:16.320 -05:00 [INF] Logging from null/null.
+2024-09-28 22:38:16.359 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:38:16.359 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:38:28.366 -05:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-09-28 22:38:47.545 -05:00 [INF] Logging from null/null.
+2024-09-28 22:38:47.552 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:39:19.707 -05:00 [INF] Logging from null/null.
+2024-09-28 22:39:19.713 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:45:28.241 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:45:29.226 -05:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-09-28 22:48:05.708 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:48:05.791 -05:00 [ERR] Failed executing DbCommand (34ms) [Parameters=[@__ToUpper_0='?' (Size = 50) (DbType = AnsiString)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[IdUser], [u].[Active], [u].[DateCreated], [u].[DateUpdated], [u].[FullName], [u].[IdRole], [u].[IdUserCreated], [u].[IdUserUpdated], [u].[Password], [u].[UserName], [r].[IdRole], [u0].[IdUser], [u1].[IdUser], [t0].[IdTask], [t0].[Active], [t0].[DateCreated], [t0].[DateUpdated], [t0].[Description], [t0].[DueDate], [t0].[IdStatus], [t0].[IdUser], [t0].[IdUserCreated], [t0].[IdUserUpdated], [t0].[Title], [t0].[UserId], [t0].[IdStatusSystem], [t0].[Active0], [t0].[Code], [t0].[DateCreated0], [t0].[DateUpdated0], [t0].[Entity], [t0].[IdUserCreated0], [t0].[IdUserUpdated0], [t0].[Name], [r].[Active], [r].[Name], [t1].[IdRole], [t1].[IdPermission], [t1].[IdPermission0], [t1].[ActionType], [t1].[DateCreated], [t1].[DateUpdated], [t1].[Entity], [t1].[IdUserCreated], [t1].[IdUserUpdated], [u0].[Active], [u0].[DateCreated], [u0].[DateUpdated], [u0].[FullName], [u0].[IdRole], [u0].[IdUserCreated], [u0].[IdUserUpdated], [u0].[Password], [u0].[UserName], [u1].[Active], [u1].[DateCreated], [u1].[DateUpdated], [u1].[FullName], [u1].[IdRole], [u1].[IdUserCreated], [u1].[IdUserUpdated], [u1].[Password], [u1].[UserName]
+FROM [security].[User] AS [u]
+INNER JOIN [security].[Role] AS [r] ON [u].[IdRole] = [r].[IdRole]
+INNER JOIN [security].[User] AS [u0] ON [u].[IdUserCreated] = [u0].[IdUser]
+LEFT JOIN [security].[User] AS [u1] ON [u].[IdUserUpdated] = [u1].[IdUser]
+LEFT JOIN (
+    SELECT [t].[IdTask], [t].[Active], [t].[DateCreated], [t].[DateUpdated], [t].[Description], [t].[DueDate], [t].[IdStatus], [t].[IdUser], [t].[IdUserCreated], [t].[IdUserUpdated], [t].[Title], [t].[UserId], [s].[IdStatusSystem], [s].[Active] AS [Active0], [s].[Code], [s].[DateCreated] AS [DateCreated0], [s].[DateUpdated] AS [DateUpdated0], [s].[Entity], [s].[IdUserCreated] AS [IdUserCreated0], [s].[IdUserUpdated] AS [IdUserUpdated0], [s].[Name]
+    FROM [dbo].[Task] AS [t]
+    INNER JOIN [dbo].[StatusSystem] AS [s] ON [t].[IdStatus] = [s].[IdStatusSystem]
+) AS [t0] ON [u].[IdUser] = [t0].[UserId]
+LEFT JOIN (
+    SELECT [r0].[IdRole], [r0].[IdPermission], [p].[IdPermission] AS [IdPermission0], [p].[ActionType], [p].[DateCreated], [p].[DateUpdated], [p].[Entity], [p].[IdUserCreated], [p].[IdUserUpdated]
+    FROM [security].[RolePermission] AS [r0]
+    INNER JOIN [security].[Permission] AS [p] ON [r0].[IdPermission] = [p].[IdPermission]
+) AS [t1] ON [r].[IdRole] = [t1].[IdRole]
+WHERE [u].[Active] = CAST(1 AS bit) AND UPPER([u].[UserName]) = @__ToUpper_0
+ORDER BY [u].[IdUser], [r].[IdRole], [u0].[IdUser], [u1].[IdUser], [t0].[IdTask], [t0].[IdStatusSystem], [t1].[IdRole], [t1].[IdPermission]
+2024-09-28 22:48:05.833 -05:00 [ERR] An exception occurred while iterating over the results of a query for context type 'TaskingSystem.Infrastructure.Persistencia.ApplicationDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserId'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:1b0e901c-b3fd-4d25-a3a9-54074aee13a5
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserId'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:1b0e901c-b3fd-4d25-a3a9-54074aee13a5
+Error Number:207,State:1,Class:16
+2024-09-28 22:49:27.593 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 22:49:28.505 -05:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-09-28 22:50:00.081 -05:00 [INF] Logging from null/null.
+2024-09-28 22:50:00.088 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 23:01:58.617 -05:00 [INF] Logging from null/null.
+2024-09-28 23:01:58.667 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 23:01:59.593 -05:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-09-28 23:02:11.943 -05:00 [INF] Logging from null/null.
+2024-09-28 23:02:11.950 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 23:17:26.941 -05:00 [INF] Logging from null/null.
+2024-09-28 23:17:26.946 -05:00 [INF] Logging from Auth/Authenticate.
+2024-09-28 23:34:36.861 -05:00 [INF] Logging from null/null.
+2024-09-28 23:34:36.865 -05:00 [INF] Logging from Auth/Authenticate.

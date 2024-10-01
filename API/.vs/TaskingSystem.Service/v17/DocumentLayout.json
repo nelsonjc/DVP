@@ -1,0 +1,203 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{21498E68-59C5-4446-B974-53C08C57C1ED}|src\\Base.Infrastructure\\TaskingSystem.Infrastructure.csproj|c:\\users\\nelson jaramillo\\develop\\dvs\\dvp\\api\\src\\base.infrastructure\\persistencia\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21498E68-59C5-4446-B974-53C08C57C1ED}|src\\Base.Infrastructure\\TaskingSystem.Infrastructure.csproj|solutionrelative:src\\base.infrastructure\\persistencia\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42581EDB-9A09-499E-89B4-46F7D1936BE0}|src\\Base.Presentation\\TaskingSystem.Presentation.csproj|c:\\users\\nelson jaramillo\\develop\\dvs\\dvp\\api\\src\\base.presentation\\controllers\\workitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42581EDB-9A09-499E-89B4-46F7D1936BE0}|src\\Base.Presentation\\TaskingSystem.Presentation.csproj|solutionrelative:src\\base.presentation\\controllers\\workitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42581EDB-9A09-499E-89B4-46F7D1936BE0}|src\\Base.Presentation\\TaskingSystem.Presentation.csproj|c:\\users\\nelson jaramillo\\develop\\dvs\\dvp\\api\\src\\base.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42581EDB-9A09-499E-89B4-46F7D1936BE0}|src\\Base.Presentation\\TaskingSystem.Presentation.csproj|solutionrelative:src\\base.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42581EDB-9A09-499E-89B4-46F7D1936BE0}|src\\Base.Presentation\\TaskingSystem.Presentation.csproj|c:\\users\\nelson jaramillo\\develop\\dvs\\dvp\\api\\src\\base.presentation\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42581EDB-9A09-499E-89B4-46F7D1936BE0}|src\\Base.Presentation\\TaskingSystem.Presentation.csproj|solutionrelative:src\\base.presentation\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA1B6D67-789D-4EA1-9CED-8B41172325E0}|src\\Base.Application\\TaskingSystem.Application.csproj|c:\\users\\nelson jaramillo\\develop\\dvs\\dvp\\api\\src\\base.application\\cqrs\\handlers\\user\\getuserfilterqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA1B6D67-789D-4EA1-9CED-8B41172325E0}|src\\Base.Application\\TaskingSystem.Application.csproj|solutionrelative:src\\base.application\\cqrs\\handlers\\user\\getuserfilterqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21498E68-59C5-4446-B974-53C08C57C1ED}|src\\Base.Infrastructure\\TaskingSystem.Infrastructure.csproj|c:\\users\\nelson jaramillo\\develop\\dvs\\dvp\\api\\src\\base.infrastructure\\repositories\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21498E68-59C5-4446-B974-53C08C57C1ED}|src\\Base.Infrastructure\\TaskingSystem.Infrastructure.csproj|solutionrelative:src\\base.infrastructure\\repositories\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21498E68-59C5-4446-B974-53C08C57C1ED}|src\\Base.Infrastructure\\TaskingSystem.Infrastructure.csproj|c:\\users\\nelson jaramillo\\develop\\dvs\\dvp\\api\\src\\base.infrastructure\\persistencia\\entityconfigurations\\dataconstant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21498E68-59C5-4446-B974-53C08C57C1ED}|src\\Base.Infrastructure\\TaskingSystem.Infrastructure.csproj|solutionrelative:src\\base.infrastructure\\persistencia\\entityconfigurations\\dataconstant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBF95823-B2DA-438D-AAAB-82B5D87B9B06}|src\\Base.Domain\\TaskingSystem.Domain.csproj|c:\\users\\nelson jaramillo\\develop\\dvs\\dvp\\api\\src\\base.domain\\entities\\security\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DBF95823-B2DA-438D-AAAB-82B5D87B9B06}|src\\Base.Domain\\TaskingSystem.Domain.csproj|solutionrelative:src\\base.domain\\entities\\security\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA1B6D67-789D-4EA1-9CED-8B41172325E0}|src\\Base.Application\\TaskingSystem.Application.csproj|c:\\users\\nelson jaramillo\\develop\\dvs\\dvp\\api\\src\\base.application\\dtos\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA1B6D67-789D-4EA1-9CED-8B41172325E0}|src\\Base.Application\\TaskingSystem.Application.csproj|solutionrelative:src\\base.application\\dtos\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA1B6D67-789D-4EA1-9CED-8B41172325E0}|src\\Base.Application\\TaskingSystem.Application.csproj|c:\\users\\nelson jaramillo\\develop\\dvs\\dvp\\api\\src\\base.application\\dtos\\permissiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA1B6D67-789D-4EA1-9CED-8B41172325E0}|src\\Base.Application\\TaskingSystem.Application.csproj|solutionrelative:src\\base.application\\dtos\\permissiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA1B6D67-789D-4EA1-9CED-8B41172325E0}|src\\Base.Application\\TaskingSystem.Application.csproj|c:\\users\\nelson jaramillo\\develop\\dvs\\dvp\\api\\src\\base.application\\mapping\\securityprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA1B6D67-789D-4EA1-9CED-8B41172325E0}|src\\Base.Application\\TaskingSystem.Application.csproj|solutionrelative:src\\base.application\\mapping\\securityprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 226,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Presentation\\Program.cs",
+              "RelativeDocumentMoniker": "src\\Base.Presentation\\Program.cs",
+              "ToolTip": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Presentation\\Program.cs",
+              "RelativeToolTip": "src\\Base.Presentation\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T06:49:48.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WorkItemController.cs",
+              "DocumentMoniker": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Presentation\\Controllers\\WorkItemController.cs",
+              "RelativeDocumentMoniker": "src\\Base.Presentation\\Controllers\\WorkItemController.cs",
+              "ToolTip": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Presentation\\Controllers\\WorkItemController.cs",
+              "RelativeToolTip": "src\\Base.Presentation\\Controllers\\WorkItemController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T06:20:13.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GetUserFilterQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Application\\CQRS\\Handlers\\User\\GetUserFilterQueryHandler.cs",
+              "RelativeDocumentMoniker": "src\\Base.Application\\CQRS\\Handlers\\User\\GetUserFilterQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Application\\CQRS\\Handlers\\User\\GetUserFilterQueryHandler.cs",
+              "RelativeToolTip": "src\\Base.Application\\CQRS\\Handlers\\User\\GetUserFilterQueryHandler.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T05:46:24.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Presentation\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "src\\Base.Presentation\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Presentation\\Controllers\\UserController.cs",
+              "RelativeToolTip": "src\\Base.Presentation\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T05:44:00.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DataConstant.cs",
+              "DocumentMoniker": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Infrastructure\\Persistencia\\EntityConfigurations\\DataConstant.cs",
+              "RelativeDocumentMoniker": "src\\Base.Infrastructure\\Persistencia\\EntityConfigurations\\DataConstant.cs",
+              "ToolTip": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Infrastructure\\Persistencia\\EntityConfigurations\\DataConstant.cs",
+              "RelativeToolTip": "src\\Base.Infrastructure\\Persistencia\\EntityConfigurations\\DataConstant.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAA5wBsAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T05:17:00.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Permission.cs",
+              "DocumentMoniker": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Domain\\Entities\\security\\Permission.cs",
+              "RelativeDocumentMoniker": "src\\Base.Domain\\Entities\\security\\Permission.cs",
+              "ToolTip": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Domain\\Entities\\security\\Permission.cs",
+              "RelativeToolTip": "src\\Base.Domain\\Entities\\security\\Permission.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T05:13:53.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Infrastructure\\Persistencia\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "src\\Base.Infrastructure\\Persistencia\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Infrastructure\\Persistencia\\ApplicationDbContext.cs",
+              "RelativeToolTip": "src\\Base.Infrastructure\\Persistencia\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T05:08:25.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RoleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Infrastructure\\Repositories\\RoleRepository.cs",
+              "RelativeDocumentMoniker": "src\\Base.Infrastructure\\Repositories\\RoleRepository.cs",
+              "ToolTip": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Infrastructure\\Repositories\\RoleRepository.cs",
+              "RelativeToolTip": "src\\Base.Infrastructure\\Repositories\\RoleRepository.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAiwCIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T04:37:52.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PermissionDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Application\\DTOs\\PermissionDto.cs",
+              "RelativeDocumentMoniker": "src\\Base.Application\\DTOs\\PermissionDto.cs",
+              "ToolTip": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Application\\DTOs\\PermissionDto.cs",
+              "RelativeToolTip": "src\\Base.Application\\DTOs\\PermissionDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T04:32:21.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RoleDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Application\\DTOs\\RoleDto.cs",
+              "RelativeDocumentMoniker": "src\\Base.Application\\DTOs\\RoleDto.cs",
+              "ToolTip": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Application\\DTOs\\RoleDto.cs",
+              "RelativeToolTip": "src\\Base.Application\\DTOs\\RoleDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T04:30:47.439Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SecurityProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Application\\Mapping\\SecurityProfile.cs",
+              "RelativeDocumentMoniker": "src\\Base.Application\\Mapping\\SecurityProfile.cs",
+              "ToolTip": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Application\\Mapping\\SecurityProfile.cs",
+              "RelativeToolTip": "src\\Base.Application\\Mapping\\SecurityProfile.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAswCcAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T04:27:24.184Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

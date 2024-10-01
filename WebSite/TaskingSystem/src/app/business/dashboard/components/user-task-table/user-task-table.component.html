@@ -1,0 +1,155 @@
+<div class="flex flex-wrap -mx-3 mb-5">
+    <div class="relative flex flex-col w-full h-full text-slate-700 bg-white shadow-md rounded-xl bg-clip-border">
+        <div class="relative mx-4 mt-4 overflow-hidden text-slate-700 bg-white rounded-none bg-clip-border">
+            <div class="flex items-center justify-between ">
+                <div>
+                    <h3 class="text-lg font-semibold text-slate-800">Ultimas Tareas</h3>
+                    <p class="text-slate-500">Gestión de Tareas: Pendiente, En Proceso, Completada</p>
+                </div>
+                <div class="flex flex-col gap-2 shrink-0 sm:flex-row">
+                    <button (click)="goToTasks()"
+                        class="rounded border border-slate-300 py-2.5 px-3 text-center text-xs font-semibold text-slate-600 transition-all hover:opacity-75 focus:ring focus:ring-slate-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                        type="button">
+                        Ver Todas
+                    </button>
+                    <button (click)="openFormTaskModal('')"
+                        class="flex select-none items-center gap-2 rounded bg-slate-800 py-2.5 px-4 text-xs font-semibold text-white shadow-md shadow-slate-900/10 transition-all hover:shadow-lg hover:shadow-slate-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                        type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                          </svg>                                               
+                        Nueva Tarea
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="p-0 overflow-scroll">
+            <table class="w-full mt-4 text-left table-auto min-w-max">
+                <thead>
+                    <tr>
+                        <th
+                            class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">
+                            <p class="flex items-center justify-between gap-2 font-sans text-sm font-normal leading-none text-slate-500">
+                                Tarea
+                            </p>
+                        </th>
+                        <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">
+                            <p class="flex items-center justify-between gap-2 font-sans text-sm font-normal leading-none text-slate-500">
+                                Asignada a
+                            </p>
+                        </th>
+                        <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">
+                            <p class="flex items-center justify-between gap-2 font-sans text-sm  font-normal leading-none text-slate-500">
+                                Estado
+                            </p>
+                        </th>
+                        <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">
+                            <p class="flex items-center justify-between gap-2 font-sans text-sm  font-normal leading-none text-slate-500">
+                                Fecha de Vencimiento
+                            </p>
+                        </th>
+                        <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">
+                            <p class="flex items-center justify-between gap-2 font-sans text-sm  font-normal leading-none text-slate-500">
+                                Creada por
+                            </p>
+                        </th>
+                        <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">
+                            <p class="flex items-center justify-between gap-2 font-sans text-sm  font-normal leading-none text-slate-500">
+                                Fecha Creación
+                            </p>
+                        </th>
+                        <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">
+                            <p class="flex items-center justify-between gap-2 font-sans text-sm  font-normal leading-none text-slate-500">
+                                Acción
+                            </p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let task of tasks">
+                        <td class="p-4 border-b border-slate-200">
+                            <div class="flex flex-col">
+                                <p class="text-sm font-semibold text-slate-700">
+                                    {{task.title}}
+                                </p>
+                                <p class="text-sm text-slate-700">
+                                    {{truncateText(task.description, 50)}}
+                                </p>
+                            </div>
+                        </td>
+                        <td class="p-4 border-b border-slate-200">
+                            <div class="flex flex-col">
+                                <p class="text-sm font-semibold text-slate-700">
+                                    {{task.user}}
+                                </p>
+                            </div>
+                        </td>
+                        <td class="p-4 border-b border-slate-200">
+                            <div class="w-max">                                
+                                <div *ngIf="task.statusCode == 'PENDING'" class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-yellow-900 uppercase rounded-md select-none whitespace-nowrap bg-yellow-500/20">
+                                    <span class="">{{task.status}}</span>
+                                </div>
+                                <div *ngIf="task.statusCode == 'IN_PROCESS'" class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-blue-900 uppercase rounded-md select-none whitespace-nowrap bg-blue-500/20">
+                                    <span class="">{{task.status}}</span>
+                                </div>
+                                <div *ngIf="task.statusCode == 'COMPLETED'" class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-green-900 uppercase rounded-md select-none whitespace-nowrap bg-green-500/20">
+                                    <span class="">{{task.status}}</span>
+                                </div>                  
+                            </div>
+                        </td>
+                        <td class="p-4 border-b border-slate-200">
+                            <p class="text-sm text-slate-500">
+                                {{task.dueDate | date : 'dd-MM-yyyy'}}
+                            </p>
+                        </td>
+                        <td class="p-4 border-b border-slate-200">
+                            <p class="text-sm text-slate-500">
+                                {{task.userCreated}}
+                            </p>
+                        </td>
+                        <td class="p-4 border-b border-slate-200">
+                            <p class="text-sm text-slate-500">
+                                {{task.dateCreated | date : 'dd-MM-yyyy'}}
+                            </p>
+                        </td>
+                        <td class="p-4 border-b border-slate-200 text-center">
+                            <button *ngIf="task.statusCode != 'COMPLETED'" (click)="openChangeStatusTaskModal(task.id)"
+                                class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-slate-900 transition-all hover:bg-slate-900/10 active:bg-slate-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                                type="button">
+                                <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <button *ngIf="task.statusCode != 'COMPLETED'" (click)="openFormTaskModal(task.id)"
+                                class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-slate-900 transition-all hover:bg-slate-900/10 active:bg-slate-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                                type="button">
+                                <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                    </svg>                                                                   
+                                </span>
+                            </button>
+                            <button (click)="openDetailTaskModal(task.id)"
+                                class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-slate-900 transition-all hover:bg-slate-900/10 active:bg-slate-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                                type="button">
+                                <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                      </svg>                                      
+                                </span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<app-task-form (updateListTaskHome)="loadTasks(1, 10)"/>
+<app-task-detail/>
+<app-task-change-status (updateListTaskHome)="loadTasks(1, 10)"/>

@@ -1,0 +1,63 @@
+<div *ngIf="isModalOpen" class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50">
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="bg-white p-8 rounded-md shadow-lg max-w-3xl w-full mx-auto space-y-6">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="text-2xl font-semibold">{{isUpdateMode ? 'Actualizar Tarea' : 'Crear Tarea'}}</h3>
+      <button type="button" class="text-gray-500 hover:text-gray-700" (click)="closeModal()">&times;</button>
+    </div>
+    
+    <div>
+      <label for="title" class="block text-sm font-medium text-gray-700">Título</label>
+      <input id="title" type="text" formControlName="title"
+        class="mt-1 block w-full border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2" />
+      <div *ngIf="taskForm.get('title').invalid && taskForm.get('title').touched" class="text-red-500 text-xs">El título es obligatorio.</div>
+    </div>
+
+    <div>
+      <label for="description" class="block text-sm font-medium text-gray-700">Descripción</label>
+      <textarea id="description" formControlName="description"
+        class="mt-1 block w-full border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2" style="min-height: 100px;"></textarea>
+      <div *ngIf="taskForm.get('description').invalid && taskForm.get('description').touched" class="text-red-500 text-xs">La descripción es obligatoria.</div>
+    </div>
+
+    <div>
+      <label for="dueDate" class="block text-sm font-medium text-gray-700">Fecha de Vencimiento</label>
+      <input id="dueDate" type="date" formControlName="dueDate"
+        class="mt-1 block w-full border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2" />
+      <div *ngIf="taskForm.get('dueDate').invalid && taskForm.get('dueDate').touched" class="text-red-500 text-xs">La fecha de vencimiento es obligatoria.</div>
+    </div>
+
+    <div>
+      <label for="employee" class="block text-sm font-medium text-gray-700">Empleado</label>
+      <select id="employee" formControlName="idUser" class="mt-1 block w-full border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2">
+        <option value="" disabled selected>Selecciona un empleado</option>
+        <option *ngFor="let employee of employees" [value]="employee.id">{{ employee.fullName }}</option>
+      </select>
+      <div *ngIf="taskForm.get('idUser').invalid && taskForm.get('idUser').touched" class="text-red-500 text-xs">El usuario es obligatorio.</div>
+    </div>
+
+    <div *ngIf="isUpdateMode">
+      <label for="status" class="block text-sm font-medium text-gray-700">Estado</label>
+      <select id="status" formControlName="idStatus" class="mt-1 block w-full border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2">
+        <option value="" disabled selected>Selecciona un estado</option>
+        <option *ngFor="let status of statuses" [value]="status.id">{{ status.name }}</option>
+      </select>
+      <div *ngIf="taskForm.get('idStatus').invalid && taskForm.get('idStatus').touched" class="text-red-500 text-xs">El estado es obligatorio.</div>
+    </div>
+
+    <div *ngIf="isUpdateMode">
+      <label for="observation" class="block text-sm font-medium text-gray-700">Observación</label>
+      <textarea id="observation" formControlName="observation"
+        class="mt-1 block w-full border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2" style="min-height: 100px;"></textarea>
+      <div *ngIf="taskForm.get('observation').invalid && taskForm.get('observation').touched" class="text-red-500 text-xs">La observación es obligatoria.</div>
+    </div>
+
+    <div class="flex justify-end space-x-2">
+      <button type="button" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700" (click)="closeModal()">
+        Cerrar
+      </button>
+      <button type="submit" [disabled]="taskForm.invalid" class="px-4 py-2 bg-blue-500 text-white rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">
+        Enviar
+      </button>
+    </div>
+  </form>
+</div>
