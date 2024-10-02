@@ -29,7 +29,7 @@
               </span>
             </td>
             <td class="py-3 px-4">{{ user.role }}</td>
-            <td class="py-3 px-4">{{ user.dateCreated }}</td>
+            <td class="py-3 px-4">{{ user.dateCreated | date : 'dd-MM-yyyy' }}</td>
             <td class="py-3 px-4">{{ user.userCreated }}</td>
             <td class="p-4 border-b border-slate-200 text-center">
               <button (click)="updateUser(user.id)"  type="button" title="Actualizar"

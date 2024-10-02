@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RHUCHmZ8ZCU=",
+  "dgSpecHash": "cqGaJ9NIqy8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\API\\src\\Base.Application\\TaskingSystem.Application.csproj",
+  "projectFilePath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Application\\TaskingSystem.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nelson Jaramillo\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Nelson Jaramillo\\.nuget\\packages\\fluentvalidation\\11.10.0\\fluentvalidation.11.10.0.nupkg.sha512",

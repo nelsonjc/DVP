@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\API\\src\\Base.Domain\\TaskingSystem.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Domain\\TaskingSystem.Domain.csproj",
       "projectName": "TaskingSystem.Domain",
-      "projectPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\API\\src\\Base.Domain\\TaskingSystem.Domain.csproj",
+      "projectPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Domain\\TaskingSystem.Domain.csproj",
       "packagesPath": "C:\\Users\\Nelson Jaramillo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\API\\src\\Base.Domain\\obj\\",
+      "outputPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nelson Jaramillo\\AppData\\Roaming\\NuGet\\NuGet.Config",

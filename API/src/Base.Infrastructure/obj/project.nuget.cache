@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "G5te2rFKv9Q=",
+  "dgSpecHash": "qUDcvSst/x8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\API\\src\\Base.Infrastructure\\TaskingSystem.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Infrastructure\\TaskingSystem.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nelson Jaramillo\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Nelson Jaramillo\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

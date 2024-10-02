@@ -1,13 +1,13 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { User } from '../../../../core/models/user/user.model';
-import { NgClass, NgFor } from '@angular/common';
+import { DatePipe, NgClass, NgFor } from '@angular/common';
 import { UserService } from '../../../../core/services/user/user.service';
 import { ResultModel } from '../../../../core/models/result.model';
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [NgClass, NgFor],
+  imports: [NgClass, NgFor, DatePipe],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })

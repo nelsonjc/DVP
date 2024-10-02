@@ -5633,11 +5633,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\API\\src\\Base.Presentation\\TaskingSystem.Presentation.csproj",
+      "projectUniqueName": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Presentation\\TaskingSystem.Presentation.csproj",
       "projectName": "TaskingSystem.Presentation",
-      "projectPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\API\\src\\Base.Presentation\\TaskingSystem.Presentation.csproj",
+      "projectPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Presentation\\TaskingSystem.Presentation.csproj",
       "packagesPath": "C:\\Users\\Nelson Jaramillo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\API\\src\\Base.Presentation\\obj\\",
+      "outputPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Presentation\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nelson Jaramillo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5655,11 +5655,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\API\\src\\Base.Application\\TaskingSystem.Application.csproj": {
-              "projectPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\API\\src\\Base.Application\\TaskingSystem.Application.csproj"
+            "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Application\\TaskingSystem.Application.csproj": {
+              "projectPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Application\\TaskingSystem.Application.csproj"
             },
-            "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\API\\src\\Base.Infrastructure\\TaskingSystem.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\API\\src\\Base.Infrastructure\\TaskingSystem.Infrastructure.csproj"
+            "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Infrastructure\\TaskingSystem.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Infrastructure\\TaskingSystem.Infrastructure.csproj"
             }
           }
         }
