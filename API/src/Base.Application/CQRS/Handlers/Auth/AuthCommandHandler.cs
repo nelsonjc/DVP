@@ -29,9 +29,14 @@ namespace TaskingSystem.Application.CQRS.Handlers.Auth
 
         public async Task<ApiResponse<UserDto>> Handle(AuthCommand command, CancellationToken cancellation)
         {
+            string messageErroLogin = "Usuario o Contraseña incorrecta";
             try
             {
-                var user = (await _repository.FindAsync(x => x.Active && x.UserName.ToUpper() == command.UserName.ToUpper())).FirstOrDefault() ?? throw new Exception("User or Password incorrect");  
+                var user = (await _repository.FindAsync(x => x.UserName.ToUpper() == command.UserName.ToUpper())).FirstOrDefault() ?? 
+                    throw new Exception(messageErroLogin);
+
+                if (!user.Active)
+                    throw new Exception("El usuario se encuentra inactivo, por favor comuníquese con su administrador");
 
                 if (_passwordService.CheckPassword(user.Password, command.Password))
                 {
@@ -47,7 +52,7 @@ namespace TaskingSystem.Application.CQRS.Handlers.Auth
                     return ApiResponse<UserDto>.SuccessResponse(result);
                 }
                 else
-                    throw new Exception("User or Password incorrect");
+                    throw new Exception(messageErroLogin);
             }
             catch (Exception ex)
             {

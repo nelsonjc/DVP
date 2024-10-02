@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { UserComponent } from '../components/user/user.component';
 import { RoleComponent } from '../components/role/role.component';
 import { NgIf } from '@angular/common';
+import { UserComponent } from '../components/user/container/user.component';
 
 @Component({
   selector: 'app-security',
@@ -12,8 +12,8 @@ import { NgIf } from '@angular/common';
 })
 export default class SecurityComponent {
 
-  showRole: boolean = false;
   showUser: boolean = true;
+  showRole: boolean = false;
 
   openRole(): void {
     this.showRole = true;

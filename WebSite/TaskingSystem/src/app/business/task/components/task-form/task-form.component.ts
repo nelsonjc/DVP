@@ -37,7 +37,6 @@ export class TaskFormComponent implements OnInit, OnDestroy {
   taskForm!: FormGroup;
   idUserLogin: string;
   statuses: Status[] = [];
-  statusesAllowed: Status[] = [];
   employees: User[] = [];
 
   private taskSubscription: Subscription | null = null;
@@ -57,7 +56,6 @@ export class TaskFormComponent implements OnInit, OnDestroy {
 
     this.masterService.getByEntityName(EntityNameEnum.Task).subscribe(x => {
       this.statuses = x.data;
-      this.statusesAllowed = x.data;
     });
 
     this.userService.getByRolName(RoleEnum.Empleado).subscribe(x => {
@@ -65,22 +63,21 @@ export class TaskFormComponent implements OnInit, OnDestroy {
     });
 
     this.idUserLogin = this.lsService.getUser().id;
-    this.initForm();
 
-    // Suscribirse al estado de apertura del modal
     this.modalSubscription = this.modalService.isModalOpen(ModalNameEnum.TaskForm).subscribe((isOpen) => {
       this.isModalOpen = isOpen;
       if (isOpen) {
-        // Obtener el id de la tarea cuando el modal se abra
+        document.body.classList.add('overflow-hidden');
         this.taskSubscription = this.modalService.getIdFromModal().subscribe((taskId) => {
-          if (taskId) {            
+          if (taskId) {       
+            this.isUpdateMode = true;     
             this.fetchTask(taskId); 
           }
         });
       }else {
-        this.task = null; // Limpiar tarea cuando se cierra el modal
+        this.task = null; 
         if (this.taskSubscription) {
-          this.taskSubscription.unsubscribe(); // Desuscribirse para evitar múltiples consultas
+          this.taskSubscription.unsubscribe(); 
         }
       }
     });
@@ -90,10 +87,9 @@ export class TaskFormComponent implements OnInit, OnDestroy {
     this.taskService.getById(idTask).subscribe(
       (task) => {
         if (task) {
-          this.task = task.data; // Almacena la tarea y llena los campos del modal
-          this.isUpdateMode = true; // Indica que estamos en modo de actualización
-          this.statusesAllowed = this.statuses.filter(x => x.id != this.task.idStatus);
-          this.initForm(); // Inicializa el formulario con la tarea
+          this.task = task.data; 
+          this.isUpdateMode = true; 
+          this.initForm(); 
         }
       },
       (error) => {
@@ -135,6 +131,7 @@ export class TaskFormComponent implements OnInit, OnDestroy {
       this.taskForm.reset();
     }
     
+    document.body.classList.remove('overflow-hidden');
     this.modalService.closeModal(ModalNameEnum.TaskForm);
   }
 
@@ -188,6 +185,6 @@ export class TaskFormComponent implements OnInit, OnDestroy {
       this.taskSubscription.unsubscribe();
     }
 
-    this.statusesAllowed = this.statuses;
+    document.body.classList.remove('overflow-hidden');
   }
 }

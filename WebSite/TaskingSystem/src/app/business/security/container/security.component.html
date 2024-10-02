@@ -16,12 +16,14 @@
             <span class="text-lg font-semibold">Roles Permisos</span>
         </div>
     </div>
+
+    <div *ngIf="showUser">
+        <app-user (close)="closeComponents()"></app-user>
+    </div>
     
     <div *ngIf="showRole">
         <app-role (close)="closeComponents()"></app-role>
     </div>
 
-    <div *ngIf="showUser">
-        <app-user (close)="closeComponents()"></app-user>
-    </div>
+
 </div>

@@ -38,11 +38,14 @@ namespace TaskingSystem.Application.CQRS.Handlers
 
         private Expression<Func<User, bool>> GenerateFilters(GetUserFilterQuery filters)
         {
-            Expression<Func<User, bool>> where = x => x.Active;
+            Expression<Func<User, bool>> where = filters.AllRows.HasValue && filters.AllRows.Value ? 
+                x => x.Active == x.Active : 
+                x => x.Active;
 
             // Nombre rol
             if (!string.IsNullOrEmpty(filters.FullName))
                 where = _treeModifierService.CombineAnd(where, x => x.FullName.ToLower().Contains(filters.FullName.ToLower()));
+
 
             return where;
         }

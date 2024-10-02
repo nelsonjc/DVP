@@ -1,0 +1,58 @@
+<div *ngIf="isModalOpen" class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()"
+        class="bg-white p-8 rounded-md shadow-lg max-w-3xl w-full mx-auto space-y-6">
+        <div class="flex justify-between mb-4">
+            <h3 class="text-2xl font-semibold">{{isUpdateMode ? 'Actualizar Usuario' : 'Crear Usuario'}}</h3>
+            <button type="button" class="text-gray-500 hover:text-gray-700" (click)="closeModal()">&times;</button>
+        </div>
+
+        <!-- Grid layout for two columns -->
+        <div class="grid grid-cols-2 gap-6">
+            <div>
+                <label for="fullName" class="block text-sm font-medium text-gray-700 text-left">Nombre</label>
+                <input id="fullName" type="text" formControlName="fullName"
+                    class="mt-1 block w-full border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2" />
+                <div *ngIf="userForm.get('fullName').invalid && userForm.get('fullName').touched" class="text-red-500 text-xs">El nombre es obligatorio.</div>
+            </div>
+
+            <div>
+                <label for="userName" class="block text-sm font-medium text-gray-700 text-left">Nombre de Usuario</label>
+                <input id="userName" type="text" formControlName="userName"
+                    class="mt-1 block w-full border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2" />
+                <div *ngIf="userForm.get('userName').invalid && userForm.get('userName').touched" class="text-red-500 text-xs">El nombre de usuario es obligatorio.</div>
+            </div>
+
+            <div>
+                <label for="active" class="block text-sm font-medium text-gray-700 text-left">Estado</label>
+                <div class="flex items-center space-x-2">
+                    <input id="active" type="checkbox" formControlName="active" class="mt-1 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2" />
+                    <span class="text-sm text-gray-700">{{ userForm.get('active').value ? 'Activo' : 'Inactivo' }}</span>
+                </div>
+                <div *ngIf="userForm.get('active').invalid && userForm.get('active').touched" class="text-red-500 text-xs">El estado es obligatorio.</div>
+            </div>
+
+            <div>
+                <label for="role" class="block text-sm font-medium text-gray-700 text-left">Empleado</label>
+                <select id="role" formControlName="idRole" class="mt-1 block w-full border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2">
+                    <option value="" disabled selected>Selecciona un empleado</option>
+                    <option *ngFor="let role of roles" [value]="role.id">{{ role.name }}</option>
+                </select>
+                <div *ngIf="userForm.get('idRole').invalid && userForm.get('idRole').touched"  class="text-red-500 text-xs">El rol es obligatorio.</div>
+            </div>
+
+            <div *ngIf="!user && !isUpdateMode">
+                <label for="password" class="block text-sm font-medium text-gray-700 text-left">Contraseña</label>
+                <input id="password" type="password" formControlName="password" class="mt-1 block w-full border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2"  
+                    autocomplete="new-password" />
+                <div *ngIf="userForm.get('password').invalid && userForm.get('password').touched" class="text-red-500 text-xs">La contraseña es obligatorio.</div>
+            </div>
+            
+        </div>
+
+        <div class="flex justify-end space-x-2">
+            <button type="button" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700" (click)="closeModal()">Cerrar</button>
+            <button type="submit" [disabled]="userForm.invalid" class="px-4 py-2 bg-blue-500 text-white rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">Enviar</button>
+          </div>
+
+    </form>
+</div>

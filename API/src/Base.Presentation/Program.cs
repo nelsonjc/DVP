@@ -54,7 +54,7 @@ builder.Services.AddScoped<LoggingMiddleware>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new() { Title = "My API", Version = "v1" });
+    c.SwaggerDoc("v1", new() { Title = "Tasking System API", Version = "v1" });
     c.EnableAnnotations();
 });
 

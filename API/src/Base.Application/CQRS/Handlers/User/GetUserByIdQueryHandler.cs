@@ -18,7 +18,7 @@ namespace TaskingSystem.Application.CQRS.Handlers
         {
             try
             {
-                var userDb = (await _repository.FindAsync(x => x.Active && x.Id == query.IdUser)).FirstOrDefault();
+                var userDb = (await _repository.FindAsync(x => x.Id == query.IdUser)).FirstOrDefault();
                 if (userDb == null) throw new NotFoundException(nameof(User), query.IdUser);
                 var infoResponse = _mapper.Map<UserDto>(userDb);
                 return ApiResponse<UserDto>.SuccessResponse(infoResponse);

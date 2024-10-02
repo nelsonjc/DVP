@@ -39,7 +39,7 @@
       <label for="status" class="block text-sm font-medium text-gray-700">Estado</label>
       <select id="status" formControlName="idStatus" class="mt-1 block w-full border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2">
         <option value="" disabled selected>Selecciona un estado</option>
-        <option *ngFor="let status of statusesAllowed" [value]="status.id">{{ status.name }}</option>
+        <option *ngFor="let status of statuses" [value]="status.id">{{ status.name }}</option>
       </select>
       <div *ngIf="taskForm.get('idStatus').invalid && taskForm.get('idStatus').touched" class="text-red-500 text-xs">El estado es obligatorio.</div>
     </div>

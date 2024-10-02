@@ -28,7 +28,7 @@ namespace TaskingSystem.Application.Mapping
                             ActionType = rp.Permission.ActionType.ToString(),
                             DateCreated = rp.Permission.DateCreated,
                             IdUserCreated = rp.Permission.IdUserCreated,
-                            UserCreated = rp.Permission.UserCreated.FullName,
+                            UserCreated = rp.Permission.UserCreated != null ? rp.Permission.UserCreated.FullName : null,
                             DateUpdated = rp.Permission.DateUpdated != null ? rp.Permission.DateUpdated : null,
                             IdUserUpdated = rp.Permission.IdUserUpdated != null ? rp.Permission.IdUserUpdated : null,
                             UserUpdated = rp.Permission.UserUpdated != null ? rp.Permission.UserUpdated.FullName : null,

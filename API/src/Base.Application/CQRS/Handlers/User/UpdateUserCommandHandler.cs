@@ -28,7 +28,9 @@ namespace TaskingSystem.Application.CQRS.Handlers
                 user.UserName = command.UserName;
                 user.IdUserUpdated = command.IdUserUpdated;
                 user.Active = command.Active;
+                user.IdRole = command.IdRole;
                 user.DateUpdated = DateTime.UtcNow.AddHours(-5);
+                
                 await _repository.UpdateAsync(user);
                 return ApiResponse<bool>.SuccessResponse(true);
             }

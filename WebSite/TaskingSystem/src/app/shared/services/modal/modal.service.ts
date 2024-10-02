@@ -15,6 +15,8 @@ export class ModalService {
     this.modalStates[ModalNameEnum.TaskForm] = new BehaviorSubject<boolean>(false);
     this.modalStates[ModalNameEnum.TaskDetail] = new BehaviorSubject<boolean>(false);
     this.modalStates[ModalNameEnum.TaskChangeStatus] = new BehaviorSubject<boolean>(false);
+    this.modalStates[ModalNameEnum.UserForm] = new BehaviorSubject<boolean>(false);
+    this.modalStates[ModalNameEnum.UserChangePasswordForm] = new BehaviorSubject<boolean>(false);
   }
 
   openModal(modalName: string, id?: string) {

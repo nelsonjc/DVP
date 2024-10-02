@@ -52,11 +52,7 @@ namespace TaskingSystem.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<User> GetByIdAsync(Guid id)
-        {
-            User result = await _context.Users.FindAsync(id);
-            return result.Active ? result : null;
-        }
+        public async Task<User> GetByIdAsync(Guid id) => await _context.Users.FindAsync(id);
 
         public async Task<IEnumerable<User>> GetByRol(string rolName)
         {

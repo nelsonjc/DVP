@@ -1,3 +1,4 @@
 export interface UserFilterRequest{
-    fullName?: string;
+    fullName?: string
+    allRows?: boolean
 }

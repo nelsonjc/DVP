@@ -9,6 +9,9 @@ import { UrlApis } from '../../enums/api-url.enum';
 import { RoleFilterRequest } from '../../models/role/role-filter.request';
 import { Role } from '../../models/role/role.model';
 import { UserFilterRequest } from '../../models/user/user-filter.request';
+import { UserCreateRequest } from '../../models/user/user-create.request';
+import { UserUpdateRequest } from '../../models/user/user-update.request';
+import { UserChangePasswordRequest } from '../../models/user/user-change-password.request';
 
 @Injectable({
   providedIn: 'root'
@@ -69,19 +72,80 @@ export class UserService {
     );
   }
 
-  // createUser(user: User): Observable<User> {
-  //   return this.http.post<User>(this.apiUrl, user);
-  // }
+  getById(idUser: string): Observable<ResultModel<User> | null> {
+    if (idUser != null && idUser != '') {
+      // Retorna la llamada a la API como un observable
+      return this.apiService.getById<ResultModel<User>>(idUser, environment.apiBaseUrl, UrlApis.User)
+        .pipe(
+          tap(response => {
+            // Verifica si la respuesta fue exitosa
+            if (response?.body?.success) {
+              console.log('Request successful');
+            } else {
+              console.error('Request failed');
+            }
+          }),
+          map(response => response?.body ?? null) // Retorna el body o null si no existe
+        );
+    }
+    else {
+      return of(null);
+    }
+  }
 
-  // updateUser(id: string, user: User): Observable<User> {
-  //   return this.http.put<User>(`${this.apiUrl}/${id}`, user);
-  // }
+  create(request: UserCreateRequest): Observable<ResultModel<boolean>> {
+    return this.apiService.post<ResultModel<boolean>>(environment.apiBaseUrl, UrlApis.User, request)
+      .pipe(
+        tap(response => {
+          // Verifica si la respuesta fue exitosa
+          if (response?.body?.success) {
+            console.log('Request successful');
+          } else {
+            console.log('Request successful');
+          }
+        }),
+        map(response => response?.body ?? null) // Retorna el body o null si no existe
+      );
+  }
+
+  update(request: UserUpdateRequest): Observable<ResultModel<boolean>> {
+    return this.apiService.update<ResultModel<boolean>>(
+      environment.apiBaseUrl,
+      UrlApis.User,
+      request.id,
+      request
+    )
+      .pipe(
+        tap(response => {
+          // Verifica si la respuesta fue exitosa
+          if (response?.body?.success) {
+            console.log('Request successful');
+          } else {
+            console.error('Request failed');
+          }
+        }),
+        map(response => response?.body ?? null) // Retorna el body o null si no existe
+      );
+  }
+
+  changePassword(request: UserChangePasswordRequest): Observable<ResultModel<boolean>> {
+      return this.apiService.update<ResultModel<boolean>>(environment.apiBaseUrl, UrlApis.User, request.idUser, request)
+      .pipe(
+        tap(response => {
+          // Verifica si la respuesta fue exitosa
+          if (response?.body?.success) {
+            console.log('Request successful');
+          } else {
+            console.log('Request successful');
+          }
+        }),
+        map(response => response?.body ?? null) // Retorna el body o null si no existe
+      );
+  }
 
   // deleteUser(id: string): Observable<void> {
   //   return this.http.delete<void>(`${this.apiUrl}/${id}`);
   // }
 
-  // changePassword(id: string, newPassword: string): Observable<void> {
-  //   return this.http.put<void>(`${this.apiUrl}/${id}/change-password`, { newPassword });
-  // }
+
 }
