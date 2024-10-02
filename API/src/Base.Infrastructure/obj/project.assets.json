@@ -3665,11 +3665,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Infrastructure\\TaskingSystem.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\Nelson Jaramillo\\Develop\\DVP\\API\\src\\Base.Infrastructure\\TaskingSystem.Infrastructure.csproj",
       "projectName": "TaskingSystem.Infrastructure",
-      "projectPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Infrastructure\\TaskingSystem.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVP\\API\\src\\Base.Infrastructure\\TaskingSystem.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Nelson Jaramillo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVP\\API\\src\\Base.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nelson Jaramillo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3687,8 +3687,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Domain\\TaskingSystem.Domain.csproj": {
-              "projectPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\src\\Base.Domain\\TaskingSystem.Domain.csproj"
+            "C:\\Users\\Nelson Jaramillo\\Develop\\DVP\\API\\src\\Base.Domain\\TaskingSystem.Domain.csproj": {
+              "projectPath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVP\\API\\src\\Base.Domain\\TaskingSystem.Domain.csproj"
             }
           }
         }

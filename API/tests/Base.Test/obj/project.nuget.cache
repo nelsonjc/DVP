@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DFdtmQoApxs=",
+  "dgSpecHash": "zzpjdmigKys=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVS\\DVP\\API\\tests\\Base.Test\\TaskingSystem.Tests.csproj",
+  "projectFilePath": "C:\\Users\\Nelson Jaramillo\\Develop\\DVP\\API\\tests\\Base.Test\\TaskingSystem.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nelson Jaramillo\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Nelson Jaramillo\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
