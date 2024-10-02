@@ -9,12 +9,13 @@ import { UrlApis } from '../../enums/api-url.enum';
 import { ResultModel } from '../../models/result.model';
 import { LocalStorageService } from '../local-storage/local-storage.service';
 import { RoleEnum } from '../../enums/roles.enum';
+import { PermissionEnum } from '../../enums/permission.enum';
+import { ScreenEnum } from '../../enums/screen.enum';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
 
   constructor(
     private lsService: LocalStorageService,
@@ -58,5 +59,10 @@ export class AuthService {
   hasRoles(roles: string[]): boolean {
     let userRole = this.lsService.getUser().role;
     return roles.some(role => userRole.includes(role));
+  }
+
+  validatepermission(entity: ScreenEnum, permission: PermissionEnum): boolean {
+    let user = this.lsService.getUser();
+    return user.permissions.find(x => x.entity == entity && x.idActionType == permission) != null;
   }
 }

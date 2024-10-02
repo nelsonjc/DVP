@@ -9,6 +9,9 @@ import { TaskDetailComponent } from '../../../task/components/task-detail/task-d
 import { ModalNameEnum } from '../../../../core/enums/modal-name.enum';
 import { ModalService } from '../../../../shared/services/modal/modal.service';
 import { TaskChangeStatusComponent } from '../../../task/components/task-change-status/task-change-status.component';
+import { AuthService } from '../../../../core/services/auth/auth.service';
+import { ScreenEnum } from '../../../../core/enums/screen.enum';
+import { PermissionEnum } from '../../../../core/enums/permission.enum';
 
 @Component({
   selector: 'app-user-task-table',
@@ -32,6 +35,7 @@ export class UserTaskTableComponent implements OnInit {
   constructor(
     private taskService: TaskService,
     private modalService: ModalService,
+    private authService: AuthService,
     private router: Router
   ) {
   }
@@ -90,5 +94,17 @@ export class UserTaskTableComponent implements OnInit {
 
   closeChangeStatusTaskModal(): void {
     this.modalService.closeModal(ModalNameEnum.TaskChangeStatus);
+  }
+
+  isViewAllTaskAllowed() : boolean {
+    return this.authService.validatepermission(ScreenEnum.Task, PermissionEnum.Read);
+  }
+
+  isCreateTaskAllowed() : boolean {
+    return this.authService.validatepermission(ScreenEnum.Task, PermissionEnum.Create);
+  }
+
+  isEditTaskAllowed() : boolean {
+    return this.authService.validatepermission(ScreenEnum.Task, PermissionEnum.Update);
   }
 }

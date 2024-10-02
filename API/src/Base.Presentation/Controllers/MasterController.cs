@@ -16,7 +16,6 @@ namespace TaskingSystem.Presentation.Controllers
         private readonly ICommandDispatcher _commandDispatcher = commandDispatcher;
 
         [HttpGet("GetStatus")]
-        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> GetStatus([FromQuery] GetStatusAllQuery request,CancellationToken cancellationToken)
         {
             var result = await _queryDispatcher.Dispatch<GetStatusAllQuery, ApiResponse<IEnumerable<StatusDto>>>(request, cancellationToken);

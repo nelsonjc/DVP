@@ -9,7 +9,6 @@
                 class="mt-1 block w-full p-2 border border-gray-300 rounded-md" />
         </div>
 
-
         <div class="mb-4 grid grid-cols-2 gap-4">
             <!-- Fecha Creación -->
             <div>
@@ -93,7 +92,7 @@
                 </button>
 
                 <!-- Botón Crear -->
-                <button (click)="openFormTaskModal('')" type="button"
+                <button *ngIf="isCreateTaskAllowed()" (click)="openFormTaskModal('')" type="button"
                     class="flex items-center bg-blue-500 text-white text-sm font-semibold rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-200 mr-2">
                     <svg class="w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                         viewBox="0 0 20 20">
@@ -217,7 +216,7 @@
                         </p>
                     </td>
                     <td class="p-4 border-b border-slate-200 text-center">
-                        <button *ngIf="task.statusCode != 'COMPLETED'" (click)="openChangeStatusTaskModal(task.id)"
+                        <button *ngIf="task.statusCode != 'COMPLETED'" (click)="openChangeStatusTaskModal(task.id)" title="Cambiar Estado"
                             class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-slate-900 transition-all hover:bg-slate-900/10 active:bg-slate-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                             type="button">
                             <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
@@ -228,7 +227,7 @@
                                 </svg>
                             </span>
                         </button>
-                        <button *ngIf="task.statusCode != 'COMPLETED'" (click)="openFormTaskModal(task.id)"
+                        <button *ngIf="isEditTaskAllowed() && task.statusCode != 'COMPLETED'" (click)="openFormTaskModal(task.id)" title="Editar"
                             class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-slate-900 transition-all hover:bg-slate-900/10 active:bg-slate-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                             type="button">
                             <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
@@ -239,7 +238,7 @@
                                 </svg>
                             </span>
                         </button>
-                        <button (click)="openDetailTaskModal(task.id)"
+                        <button (click)="openDetailTaskModal(task.id)" title="Ver Detalle"
                             class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-slate-900 transition-all hover:bg-slate-900/10 active:bg-slate-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                             type="button">
                             <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">

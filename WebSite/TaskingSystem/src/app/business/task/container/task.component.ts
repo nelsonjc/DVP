@@ -16,6 +16,9 @@ import { MasterService } from '../../../core/services/master/master.service';
 import { EntityNameEnum } from '../../../core/enums/entity-name.enum';
 import { RoleEnum } from '../../../core/enums/roles.enum';
 import { UserService } from '../../../core/services/user/user.service';
+import { AuthService } from '../../../core/services/auth/auth.service';
+import { ScreenEnum } from '../../../core/enums/screen.enum';
+import { PermissionEnum } from '../../../core/enums/permission.enum';
 
 @Component({
   selector: 'app-task',
@@ -56,7 +59,8 @@ export default class TaskComponent implements OnInit {
     private taskService: TaskService,
     private modalService: ModalService,
     private masterService: MasterService,
-    private userService: UserService
+    private userService: UserService,
+    private authService: AuthService
   ) {
   }
 
@@ -246,5 +250,13 @@ export default class TaskComponent implements OnInit {
       console.log(this.filters);
       this.applyFilters();      
     }
+  }
+
+  isCreateTaskAllowed() : boolean {
+    return this.authService.validatepermission(ScreenEnum.Task, PermissionEnum.Create);
+  }
+  
+  isEditTaskAllowed() : boolean {
+    return this.authService.validatepermission(ScreenEnum.Task, PermissionEnum.Update);
   }
 }

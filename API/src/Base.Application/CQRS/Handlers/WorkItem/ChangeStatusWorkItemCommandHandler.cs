@@ -9,10 +9,15 @@ using TaskingSystem.Domain.Interfaces.Repository;
 
 namespace TaskingSystem.Application.CQRS.Handlers
 {
-    public class ChangeStatusWorkItemCommandHandler(IMapper mapper, IStatusRepository statusRepository, IWorkItemRepository repository) : ICommandHandler<ChangeStatusWorkItemCommand, ApiResponse<bool>>
+    public class ChangeStatusWorkItemCommandHandler(
+        IMapper mapper, 
+        IStatusRepository statusRepository, 
+        IUserRepository userRepository,
+        IWorkItemRepository repository) : ICommandHandler<ChangeStatusWorkItemCommand, ApiResponse<bool>>
     {
         private readonly IMapper _mapper = mapper;
         private readonly IStatusRepository _statusRepository = statusRepository;
+        private readonly IUserRepository _userRepository = userRepository;
         private readonly IWorkItemRepository _repository = repository;
 
         public async Task<ApiResponse<bool>> Handle(ChangeStatusWorkItemCommand command, CancellationToken cancellation)
@@ -20,20 +25,24 @@ namespace TaskingSystem.Application.CQRS.Handlers
             try
             {
                 DateTime now = DateTime.UtcNow.AddHours(-5);
-                var workItem = await _repository.GetByIdAsync(command.Id) ?? throw new NotFoundException(nameof(User), command.Id);
+                var user = await _userRepository.GetByIdAsync(command.IdUserUpdated) ?? throw new NotFoundException(nameof(User), command.IdUserUpdated);
+                var workItem = await _repository.GetByIdAsync(command.Id) ?? throw new NotFoundException(nameof(WorkItem), command.Id);
+
                 var statusCurrency = workItem.Status;
 
                 var newStatus = await _statusRepository.GetByIdAsync(command.IdStatus);
 
                 workItem.IdStatus = command.IdStatus;
-                workItem.IdUserUpdated = command.IdUserUpdated;
+                workItem.IdUserUpdated = user.Id;
                 workItem.DateUpdated = now;
 
                 // Guarda los cambios de la actualización
                 await _repository.UpdateAsync(workItem);
                 await _repository.SaveChangeAsync();
 
-                string changes = $"<strong>Estado</strong>: Ha pasado de '{statusCurrency.Name}' a '{newStatus.Name}' <br/><strong>Observación</strong>: {command.Observation}";
+                string changes = $"<strong>Estado</strong>: Ha pasado de '{statusCurrency.Name}' a '{newStatus.Name}' <br/>" +
+                    $"<strong>Observación</strong>: {command.Observation} <br/>" +
+                    $"<strong>Usuario</strong>: {user.FullName}";
 
                 // Log de eventos
                 workItem.Logs.Add(new WorkItemLog

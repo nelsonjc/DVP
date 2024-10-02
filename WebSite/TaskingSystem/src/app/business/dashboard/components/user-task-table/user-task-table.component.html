@@ -7,12 +7,12 @@
                     <p class="text-slate-500">Gestión de Tareas: Pendiente, En Proceso, Completada</p>
                 </div>
                 <div class="flex flex-col gap-2 shrink-0 sm:flex-row">
-                    <button (click)="goToTasks()"
+                    <button *ngIf="isViewAllTaskAllowed()" (click)="goToTasks()"
                         class="rounded border border-slate-300 py-2.5 px-3 text-center text-xs font-semibold text-slate-600 transition-all hover:opacity-75 focus:ring focus:ring-slate-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                         type="button">
                         Ver Todas
                     </button>
-                    <button (click)="openFormTaskModal('')"
+                    <button *ngIf="isCreateTaskAllowed()" (click)="openFormTaskModal('')"
                         class="flex select-none items-center gap-2 rounded bg-slate-800 py-2.5 px-4 text-xs font-semibold text-white shadow-md shadow-slate-900/10 transition-all hover:shadow-lg hover:shadow-slate-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                         type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
@@ -123,7 +123,7 @@
                                     </svg>
                                 </span>
                             </button>
-                            <button *ngIf="task.statusCode != 'COMPLETED'" (click)="openFormTaskModal(task.id)"
+                            <button *ngIf="isEditTaskAllowed() && task.statusCode != 'COMPLETED'" (click)="openFormTaskModal(task.id)"
                                 class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-slate-900 transition-all hover:bg-slate-900/10 active:bg-slate-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                                 type="button">
                                 <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">

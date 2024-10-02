@@ -31,6 +31,7 @@ export class TaskChangeStatusComponent implements OnInit, OnDestroy {
   isModalOpen: boolean = false;
   taskForm!: FormGroup;
   statuses: Status[] = [];
+  statusesAllowed: Status[] = [];
   idUserLogin: string;
 
   private taskSubscription: Subscription | null = null;
@@ -49,6 +50,7 @@ export class TaskChangeStatusComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.masterService.getByEntityName(EntityNameEnum.Task).subscribe(x => {
       this.statuses = x.data;
+      this.statusesAllowed = x.data;
     });
 
     this.idUserLogin = this.lsService.getUser().id;
@@ -76,8 +78,11 @@ export class TaskChangeStatusComponent implements OnInit, OnDestroy {
   fetchTask(idTask: string) {
     this.taskService.getById(idTask).subscribe(
       (task) => {
-        this.task = task.data; // Almacena la tarea y llena los campos del modal
-        this.initForm(); // Inicializa el formulario con la tarea
+        if (task ) {
+          this.task = task.data; // Almacena la tarea y llena los campos del modal
+          this.initForm(); // Inicializa el formulario con la tarea
+          this.statusesAllowed = this.statuses.filter(x => x.id != this.task.idStatus)
+        }
       },
       (error) => {
         console.error('Error fetching task details:', error);
@@ -133,5 +138,7 @@ export class TaskChangeStatusComponent implements OnInit, OnDestroy {
     if (this.taskSubscription) {
       this.taskSubscription.unsubscribe();
     }
+
+    this.statusesAllowed = this.statuses;
   }
 }

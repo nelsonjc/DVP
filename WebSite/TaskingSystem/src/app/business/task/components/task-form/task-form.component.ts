@@ -37,6 +37,7 @@ export class TaskFormComponent implements OnInit, OnDestroy {
   taskForm!: FormGroup;
   idUserLogin: string;
   statuses: Status[] = [];
+  statusesAllowed: Status[] = [];
   employees: User[] = [];
 
   private taskSubscription: Subscription | null = null;
@@ -56,6 +57,7 @@ export class TaskFormComponent implements OnInit, OnDestroy {
 
     this.masterService.getByEntityName(EntityNameEnum.Task).subscribe(x => {
       this.statuses = x.data;
+      this.statusesAllowed = x.data;
     });
 
     this.userService.getByRolName(RoleEnum.Empleado).subscribe(x => {
@@ -71,7 +73,7 @@ export class TaskFormComponent implements OnInit, OnDestroy {
       if (isOpen) {
         // Obtener el id de la tarea cuando el modal se abra
         this.taskSubscription = this.modalService.getIdFromModal().subscribe((taskId) => {
-          if (taskId) {
+          if (taskId) {            
             this.fetchTask(taskId); 
           }
         });
@@ -87,9 +89,12 @@ export class TaskFormComponent implements OnInit, OnDestroy {
   fetchTask(idTask: string) {
     this.taskService.getById(idTask).subscribe(
       (task) => {
-        this.task = task.data; // Almacena la tarea y llena los campos del modal
-        this.isUpdateMode = true; // Indica que estamos en modo de actualización
-        this.initForm(); // Inicializa el formulario con la tarea
+        if (task) {
+          this.task = task.data; // Almacena la tarea y llena los campos del modal
+          this.isUpdateMode = true; // Indica que estamos en modo de actualización
+          this.statusesAllowed = this.statuses.filter(x => x.id != this.task.idStatus);
+          this.initForm(); // Inicializa el formulario con la tarea
+        }
       },
       (error) => {
         console.error('Error fetching task details:', error);
@@ -182,5 +187,7 @@ export class TaskFormComponent implements OnInit, OnDestroy {
     if (this.taskSubscription) {
       this.taskSubscription.unsubscribe();
     }
+
+    this.statusesAllowed = this.statuses;
   }
 }
