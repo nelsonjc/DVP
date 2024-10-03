@@ -250,10 +250,14 @@ namespace TaskingSystem.Tests.Presentation
                 .ReturnsAsync(response);
 
             // Act
-            var result = await _userController.DeleteUser(id, CancellationToken.None);
+            var result = await _userController.DeleteUser(new DeleteUserCommand { IdUser = id, IdUserUpdated = Guid.NewGuid() }, CancellationToken.None);
 
             // Assert
-            Assert.IsInstanceOf<OkResult>(result);
+            var okResult = result as OkObjectResult;
+            Assert.IsNotNull(okResult);
+            var apiResponse = okResult.Value as ApiResponse<bool>;
+            Assert.IsNotNull(apiResponse);
+            Assert.IsTrue(apiResponse.Success);
         }
 
         [Test]
@@ -272,7 +276,7 @@ namespace TaskingSystem.Tests.Presentation
                 .ReturnsAsync(response);
 
             // Act
-            var result = await _userController.DeleteUser(id, CancellationToken.None);
+            var result = await _userController.DeleteUser(new DeleteUserCommand { IdUser = id, IdUserUpdated = Guid.NewGuid() }, CancellationToken.None);
 
             // Assert
             var badRequestResult = result as BadRequestObjectResult;
