@@ -54,6 +54,8 @@ export class TaskFormComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
+    this.initForm();
+
     this.masterService.getByEntityName(EntityNameEnum.Task).subscribe(x => {
       this.statuses = x.data;
     });
@@ -108,7 +110,9 @@ export class TaskFormComponent implements OnInit, OnDestroy {
         title: [this.isUpdateMode ? this.task.title : '', Validators.required],
         description: [this.isUpdateMode ? this.task.description : '', Validators.required],
         dueDate: [this.isUpdateMode ? formattedDueDate : '', Validators.required],
-        idUser: [this.isUpdateMode ? this.task.idUser : '', Validators.required], // Simula un usuario autenticado
+        idUser: [this.isUpdateMode ? this.task.idUser : '', Validators.required],
+        idStatus: [this.isUpdateMode ? this.task.idStatus : null, this.isUpdateMode ? Validators.required : null],
+        observation: ['', this.isUpdateMode ? Validators.required : null]
       });      
     }
     else{

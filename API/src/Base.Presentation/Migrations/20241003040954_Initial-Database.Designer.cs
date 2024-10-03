@@ -12,8 +12,8 @@ using TaskingSystem.Infrastructure.Persistencia;
 namespace TaskingSystem.Presentation.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240930175618_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20241003040954_Initial-Database")]
+    partial class InitialDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -65,7 +65,7 @@ namespace TaskingSystem.Presentation.Migrations
                         {
                             Id = new Guid("59113ba2-fbeb-4356-af8c-858a5f7eb787"),
                             ActionType = 1,
-                            DateCreated = new DateTime(2024, 9, 30, 12, 56, 18, 431, DateTimeKind.Utc).AddTicks(6638),
+                            DateCreated = new DateTime(2024, 10, 2, 23, 9, 54, 520, DateTimeKind.Utc).AddTicks(6877),
                             Entity = "USER",
                             IdUserCreated = new Guid("f2d08e38-24bf-49b7-929b-d21f065dd6e2")
                         },
@@ -73,7 +73,7 @@ namespace TaskingSystem.Presentation.Migrations
                         {
                             Id = new Guid("4630b441-bc83-4f1f-9600-47802b5bd685"),
                             ActionType = 2,
-                            DateCreated = new DateTime(2024, 9, 30, 12, 56, 18, 431, DateTimeKind.Utc).AddTicks(6641),
+                            DateCreated = new DateTime(2024, 10, 2, 23, 9, 54, 520, DateTimeKind.Utc).AddTicks(6880),
                             Entity = "USER",
                             IdUserCreated = new Guid("f2d08e38-24bf-49b7-929b-d21f065dd6e2")
                         },
@@ -81,7 +81,7 @@ namespace TaskingSystem.Presentation.Migrations
                         {
                             Id = new Guid("939fc5b4-484d-46b2-b0b6-523e780670f0"),
                             ActionType = 3,
-                            DateCreated = new DateTime(2024, 9, 30, 12, 56, 18, 431, DateTimeKind.Utc).AddTicks(6657),
+                            DateCreated = new DateTime(2024, 10, 2, 23, 9, 54, 520, DateTimeKind.Utc).AddTicks(6881),
                             Entity = "USER",
                             IdUserCreated = new Guid("f2d08e38-24bf-49b7-929b-d21f065dd6e2")
                         },
@@ -89,7 +89,7 @@ namespace TaskingSystem.Presentation.Migrations
                         {
                             Id = new Guid("9e5333a7-651d-4001-970a-b5ee57583198"),
                             ActionType = 4,
-                            DateCreated = new DateTime(2024, 9, 30, 12, 56, 18, 431, DateTimeKind.Utc).AddTicks(6658),
+                            DateCreated = new DateTime(2024, 10, 2, 23, 9, 54, 520, DateTimeKind.Utc).AddTicks(6882),
                             Entity = "USER",
                             IdUserCreated = new Guid("f2d08e38-24bf-49b7-929b-d21f065dd6e2")
                         },
@@ -97,7 +97,7 @@ namespace TaskingSystem.Presentation.Migrations
                         {
                             Id = new Guid("0aab002a-26b9-4460-b0ce-dcebfd232aa6"),
                             ActionType = 1,
-                            DateCreated = new DateTime(2024, 9, 30, 12, 56, 18, 431, DateTimeKind.Utc).AddTicks(6659),
+                            DateCreated = new DateTime(2024, 10, 2, 23, 9, 54, 520, DateTimeKind.Utc).AddTicks(6884),
                             Entity = "TASK",
                             IdUserCreated = new Guid("f2d08e38-24bf-49b7-929b-d21f065dd6e2")
                         },
@@ -105,7 +105,7 @@ namespace TaskingSystem.Presentation.Migrations
                         {
                             Id = new Guid("02573a63-e73f-47c4-98ef-10e27557ebe0"),
                             ActionType = 2,
-                            DateCreated = new DateTime(2024, 9, 30, 12, 56, 18, 431, DateTimeKind.Utc).AddTicks(6660),
+                            DateCreated = new DateTime(2024, 10, 2, 23, 9, 54, 520, DateTimeKind.Utc).AddTicks(6886),
                             Entity = "TASK",
                             IdUserCreated = new Guid("f2d08e38-24bf-49b7-929b-d21f065dd6e2")
                         },
@@ -113,7 +113,7 @@ namespace TaskingSystem.Presentation.Migrations
                         {
                             Id = new Guid("f6f008cf-9f05-477f-bf78-83fa14275b45"),
                             ActionType = 3,
-                            DateCreated = new DateTime(2024, 9, 30, 12, 56, 18, 431, DateTimeKind.Utc).AddTicks(6662),
+                            DateCreated = new DateTime(2024, 10, 2, 23, 9, 54, 520, DateTimeKind.Utc).AddTicks(6887),
                             Entity = "TASK",
                             IdUserCreated = new Guid("f2d08e38-24bf-49b7-929b-d21f065dd6e2")
                         },
@@ -121,23 +121,23 @@ namespace TaskingSystem.Presentation.Migrations
                         {
                             Id = new Guid("d34acf6b-7cc0-4bb8-872d-9f7c7189bd1e"),
                             ActionType = 4,
-                            DateCreated = new DateTime(2024, 9, 30, 12, 56, 18, 431, DateTimeKind.Utc).AddTicks(6663),
+                            DateCreated = new DateTime(2024, 10, 2, 23, 9, 54, 520, DateTimeKind.Utc).AddTicks(6890),
                             Entity = "TASK",
                             IdUserCreated = new Guid("f2d08e38-24bf-49b7-929b-d21f065dd6e2")
                         },
                         new
                         {
                             Id = new Guid("fc8779b9-0ca7-4105-8876-453f38a3b0ca"),
-                            ActionType = 4,
-                            DateCreated = new DateTime(2024, 9, 30, 12, 56, 18, 431, DateTimeKind.Utc).AddTicks(6665),
+                            ActionType = 5,
+                            DateCreated = new DateTime(2024, 10, 2, 23, 9, 54, 520, DateTimeKind.Utc).AddTicks(6891),
                             Entity = "TASK",
                             IdUserCreated = new Guid("f2d08e38-24bf-49b7-929b-d21f065dd6e2")
                         },
                         new
                         {
                             Id = new Guid("844fd0a0-a715-445d-ad1e-c39fd7033e39"),
-                            ActionType = 4,
-                            DateCreated = new DateTime(2024, 9, 30, 12, 56, 18, 431, DateTimeKind.Utc).AddTicks(6666),
+                            ActionType = 6,
+                            DateCreated = new DateTime(2024, 10, 2, 23, 9, 54, 520, DateTimeKind.Utc).AddTicks(6892),
                             Entity = "TASK",
                             IdUserCreated = new Guid("f2d08e38-24bf-49b7-929b-d21f065dd6e2")
                         });
@@ -248,12 +248,27 @@ namespace TaskingSystem.Presentation.Migrations
                         new
                         {
                             IdRole = new Guid("4cca98ee-83fb-4357-a851-2635841e056e"),
+                            IdPermission = new Guid("02573a63-e73f-47c4-98ef-10e27557ebe0")
+                        },
+                        new
+                        {
+                            IdRole = new Guid("4cca98ee-83fb-4357-a851-2635841e056e"),
                             IdPermission = new Guid("fc8779b9-0ca7-4105-8876-453f38a3b0ca")
                         },
                         new
                         {
                             IdRole = new Guid("4cca98ee-83fb-4357-a851-2635841e056e"),
+                            IdPermission = new Guid("f6f008cf-9f05-477f-bf78-83fa14275b45")
+                        },
+                        new
+                        {
+                            IdRole = new Guid("4cca98ee-83fb-4357-a851-2635841e056e"),
                             IdPermission = new Guid("844fd0a0-a715-445d-ad1e-c39fd7033e39")
+                        },
+                        new
+                        {
+                            IdRole = new Guid("4cca98ee-83fb-4357-a851-2635841e056e"),
+                            IdPermission = new Guid("0aab002a-26b9-4460-b0ce-dcebfd232aa6")
                         },
                         new
                         {
@@ -323,7 +338,7 @@ namespace TaskingSystem.Presentation.Migrations
                             Id = new Guid("d40b4c74-d443-4786-b06c-da82691319fa"),
                             Active = true,
                             Code = "PENDING",
-                            DateCreated = new DateTime(2024, 9, 30, 12, 56, 18, 431, DateTimeKind.Utc).AddTicks(6724),
+                            DateCreated = new DateTime(2024, 10, 2, 23, 9, 54, 520, DateTimeKind.Utc).AddTicks(6947),
                             Entity = "TASK",
                             IdUserCreated = new Guid("f2d08e38-24bf-49b7-929b-d21f065dd6e2"),
                             Name = "Pendiente"
@@ -333,7 +348,7 @@ namespace TaskingSystem.Presentation.Migrations
                             Id = new Guid("b1313626-e0c9-4c5f-816e-db9ee365079a"),
                             Active = true,
                             Code = "IN_PROCESS",
-                            DateCreated = new DateTime(2024, 9, 30, 12, 56, 18, 431, DateTimeKind.Utc).AddTicks(6727),
+                            DateCreated = new DateTime(2024, 10, 2, 23, 9, 54, 520, DateTimeKind.Utc).AddTicks(6949),
                             Entity = "TASK",
                             IdUserCreated = new Guid("f2d08e38-24bf-49b7-929b-d21f065dd6e2"),
                             Name = "En Proceso"
@@ -343,7 +358,7 @@ namespace TaskingSystem.Presentation.Migrations
                             Id = new Guid("5e9962dc-a63b-423a-b584-b75b46496f56"),
                             Active = true,
                             Code = "COMPLETED",
-                            DateCreated = new DateTime(2024, 9, 30, 12, 56, 18, 431, DateTimeKind.Utc).AddTicks(6729),
+                            DateCreated = new DateTime(2024, 10, 2, 23, 9, 54, 520, DateTimeKind.Utc).AddTicks(6951),
                             Entity = "TASK",
                             IdUserCreated = new Guid("f2d08e38-24bf-49b7-929b-d21f065dd6e2"),
                             Name = "Completada"
@@ -411,7 +426,7 @@ namespace TaskingSystem.Presentation.Migrations
                         {
                             Id = new Guid("f2d08e38-24bf-49b7-929b-d21f065dd6e2"),
                             Active = true,
-                            DateCreated = new DateTime(2024, 9, 30, 12, 56, 18, 431, DateTimeKind.Utc).AddTicks(6554),
+                            DateCreated = new DateTime(2024, 10, 2, 23, 9, 54, 520, DateTimeKind.Utc).AddTicks(6826),
                             FullName = "Usuario Administrador",
                             IdRole = new Guid("c7d636c0-54be-472a-9a53-ba17ece3d4d4"),
                             IdUserCreated = new Guid("f2d08e38-24bf-49b7-929b-d21f065dd6e2"),
@@ -422,7 +437,7 @@ namespace TaskingSystem.Presentation.Migrations
                         {
                             Id = new Guid("11695b42-fc05-47ea-b2e5-c96e78460b2b"),
                             Active = true,
-                            DateCreated = new DateTime(2024, 9, 30, 12, 56, 18, 431, DateTimeKind.Utc).AddTicks(6572),
+                            DateCreated = new DateTime(2024, 10, 2, 23, 9, 54, 520, DateTimeKind.Utc).AddTicks(6852),
                             FullName = "Usuario Supervidor",
                             IdRole = new Guid("4cca98ee-83fb-4357-a851-2635841e056e"),
                             IdUserCreated = new Guid("f2d08e38-24bf-49b7-929b-d21f065dd6e2"),
@@ -433,7 +448,7 @@ namespace TaskingSystem.Presentation.Migrations
                         {
                             Id = new Guid("1b823b39-13bc-4aa9-ad80-b8183f317dab"),
                             Active = true,
-                            DateCreated = new DateTime(2024, 9, 30, 12, 56, 18, 431, DateTimeKind.Utc).AddTicks(6574),
+                            DateCreated = new DateTime(2024, 10, 2, 23, 9, 54, 520, DateTimeKind.Utc).AddTicks(6854),
                             FullName = "Usuario Empleado",
                             IdRole = new Guid("dd381045-9efa-40f8-afd1-f46879b8c2d7"),
                             IdUserCreated = new Guid("f2d08e38-24bf-49b7-929b-d21f065dd6e2"),
