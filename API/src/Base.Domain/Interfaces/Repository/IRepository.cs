@@ -9,7 +9,8 @@ namespace TaskingSystem.Domain.Interfaces.Repository
         Task<TEntity> GetByIdAsync(Guid id);
         Task<IEnumerable<TEntity>> GetAllAsync();
         Task UpdateAsync(TEntity entity);
-        Task DeleteAsync(Guid id);
+        Task DeleteAsync(Guid id, Guid idUserUpdated );
+       
         Task<IEnumerable<TEntity>> FindAsync(Expression<Func<TEntity, bool>> predicate);
         Task<PagedList<TEntity>> GetPaged(PaginationQueryFilter filter, Expression<Func<TEntity, bool>> where);
         Task SaveChangeAsync();

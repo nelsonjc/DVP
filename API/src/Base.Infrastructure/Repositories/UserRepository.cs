@@ -22,12 +22,14 @@ namespace TaskingSystem.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(Guid id)
+        public async Task DeleteAsync(Guid id, Guid idUserUpdated)
         {
             var userDb = await GetByIdAsync(id);
             if (userDb != null)
             {
                 userDb.Active = false;
+                userDb.IdUserUpdated = idUserUpdated;
+                userDb.DateUpdated = DateTime.UtcNow.AddHours(-5);
                 _context.Users.Update(userDb);
                 await _context.SaveChangesAsync();
             }
@@ -73,6 +75,28 @@ namespace TaskingSystem.Infrastructure.Repositories
         {
             _context.Users.Update(entity);
             await _context.SaveChangesAsync();
+        }
+
+        public  async Task ChangePassword(Guid idUser, string password, Guid idUserUpdated)
+        {
+            var user = await _context.Users.FindAsync(idUser) ?? throw new Exception("Usuario no existe!");
+            user.Password = password;
+            user.IdUserUpdated = idUserUpdated;
+            user.DateUpdated = DateTime.UtcNow.AddHours(-5);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task ActivateAsync(Guid id, Guid idUserUpdated)
+        {
+            var userDb = await GetByIdAsync(id);
+            if (userDb != null)
+            {
+                userDb.Active = true;
+                userDb.IdUserUpdated = idUserUpdated;
+                userDb.DateUpdated = DateTime.UtcNow.AddHours(-5);
+                _context.Users.Update(userDb);
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

@@ -50,12 +50,20 @@ namespace TaskingSystem.Presentation.Controllers
             return result.Success ? Ok(result) : BadRequest(result);
         }
 
-        [HttpDelete("{id}")]
+        [HttpPut("deactivate/{id}")]
         [Authorize(Roles = "Administrador")]
-        public async Task<IActionResult> DeleteUser(Guid id, CancellationToken cancellationToken)
+        public async Task<IActionResult> DeleteUser(DeleteUserCommand request, CancellationToken cancellationToken)
         {
-            var result = await _commandDispatcher.Dispatch<DeleteUserCommand, ApiResponse<bool>>(new DeleteUserCommand { IdUser = id }, cancellationToken);
-            return result.Success ? Ok() : BadRequest(result);
+            var result = await _commandDispatcher.Dispatch<DeleteUserCommand, ApiResponse<bool>>(request, cancellationToken);
+            return result.Success ? Ok(result) : BadRequest(result);
+        }
+
+        [HttpPut("active/{id}")]
+        [Authorize(Roles = "Administrador")]
+        public async Task<IActionResult> Active(ActivateUserCommand request, CancellationToken cancellationToken)
+        {
+            var result = await _commandDispatcher.Dispatch<ActivateUserCommand, ApiResponse<bool>>(request, cancellationToken);
+            return result.Success ? Ok(result) : BadRequest(result);
         }
 
         [HttpGet("GetByRolName/{rolName}")]
@@ -73,6 +81,18 @@ namespace TaskingSystem.Presentation.Controllers
         public async Task<IActionResult> GetAllRole([FromQuery] GetRoleFilterQuery filters, CancellationToken cancellationToken)
         {
             var result = await _queryDispatcher.Dispatch<GetRoleFilterQuery, ApiResponse<IEnumerable<RoleDto>>>(filters, cancellationToken);
+            return result.Success ? Ok(result) : BadRequest(result);
+        }
+
+        [HttpPut("change-password/{id}")]
+        [Authorize(Roles = "Administrador")]
+        public async Task<IActionResult> ChangePassword(Guid id, [FromBody] ChangePasswordCommand command, CancellationToken cancellationToken)
+        {
+            if(id != command.IdUser)
+                return BadRequest();
+
+            var result = await _commandDispatcher.Dispatch<ChangePasswordCommand, ApiResponse<bool>>(command, cancellationToken);
+
             return result.Success ? Ok(result) : BadRequest(result);
         }
     }

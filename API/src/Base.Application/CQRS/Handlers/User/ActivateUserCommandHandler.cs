@@ -7,16 +7,17 @@ using TaskingSystem.Domain.Interfaces.Repository;
 
 namespace TaskingSystem.Application.CQRS.Handlers
 {
-    public class DeleteUserCommandHandler(IUserRepository repository) : ICommandHandler<DeleteUserCommand, ApiResponse<bool>>
+    public class ActivateUserCommandHandler(IUserRepository repository) : ICommandHandler<ActivateUserCommand, ApiResponse<bool>>
     {
+
         private readonly IUserRepository _repository = repository;
 
-        public async Task<ApiResponse<bool>> Handle(DeleteUserCommand command, CancellationToken cancellation)
+        public async Task<ApiResponse<bool>> Handle(ActivateUserCommand command, CancellationToken cancellation)
         {
             try
             {
                 var userDb = await _repository.GetByIdAsync(command.IdUser) ?? throw new NotFoundException(nameof(User), command.IdUser);
-                await _repository.DeleteAsync(userDb.Id, command.IdUserUpdated);
+                await _repository.ActivateAsync(userDb.Id, command.IdUserUpdated);
                 return ApiResponse<bool>.SuccessResponse(true); ;
             }
             catch (Exception ex)
@@ -24,5 +25,8 @@ namespace TaskingSystem.Application.CQRS.Handlers
                 return ApiResponse<bool>.ErrorResponse(ex.Message);
             }
         }
+
     }
+    
+    
 }

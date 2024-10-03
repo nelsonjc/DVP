@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { ModalService } from '../../../../../../shared/services/modal/modal.service';
 import { ModalNameEnum } from '../../../../../../core/enums/modal-name.enum';
+import { LocalStorageService } from '../../../../../../core/services/local-storage/local-storage.service';
+import { NotificationService } from '../../../../../../core/services/notification/notification.service';
 
 @Component({
   selector: 'app-user-change-password',
@@ -28,6 +30,8 @@ export class UserChangePasswordComponent implements OnInit, OnDestroy {
   constructor(
     private modalService: ModalService,
     private userService: UserService,
+    private lsService: LocalStorageService,
+    private notificationService: NotificationService,
     private fb: FormBuilder,
   ) {
 
@@ -40,6 +44,8 @@ export class UserChangePasswordComponent implements OnInit, OnDestroy {
     }, {
       validators: this.passwordMatchValidator
     });
+
+    this.idUserLogin = this.lsService.getUser().id;
 
     // Suscribirse al estado de apertura del modal
     this.modalSubscription = this.modalService.isModalOpen(ModalNameEnum.UserChangePasswordForm).subscribe((isOpen) => {
@@ -75,7 +81,8 @@ export class UserChangePasswordComponent implements OnInit, OnDestroy {
         next: (response) => {
           this.successMessage = 'Contraseña cambiada con éxito.';
           this.errorMessage = '';
-          // Puedes redirigir al usuario o realizar otra acción aquí
+          this.notificationService.showSuccess('La contraseña ha sido cambiado con exito!');
+          this.closeModal();
         },
         error: (error) => {
           this.errorMessage = 'Error al cambiar la contraseña: ' + error.message;

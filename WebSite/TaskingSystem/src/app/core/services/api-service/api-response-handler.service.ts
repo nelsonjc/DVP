@@ -16,6 +16,12 @@ export class ApiResponseHandlerService {
         title: 'Éxito',
         text: 'La operación se realizó con éxito.'
       });
+    } else if (response.status === 404) {
+      Swal.fire({
+        icon: 'error',
+        title: '¡Oops! Ruta No Encontrada',
+        text: 'Lo sentimos, pero la Ruta que estás buscando no se pudo encontrar. Puede que haya sido eliminada, haya cambiado de nombre o nunca haya existido. Por favor, pongase ne contanto con su adminisitrador'
+      });
     } else if (response.status === 401) {
       // Manejo de error 401 - No autorizado
       Swal.fire({
@@ -75,8 +81,8 @@ export class ApiResponseHandlerService {
       // Manejo de errores desconocidos
       Swal.fire({
         icon: 'error',
-        title: 'Error desconocido',
-        text: 'Ha ocurrido un error inesperado.'
+        title: 'Error',
+        text: response
       });
     }
   }

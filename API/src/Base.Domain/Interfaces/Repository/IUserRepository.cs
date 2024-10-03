@@ -9,5 +9,8 @@ namespace TaskingSystem.Domain.Interfaces.Repository
     public interface IUserRepository : IRepository<User>
     {
         public Task<IEnumerable<User>> GetByRol(string rolName);
+        public Task ChangePassword (Guid  idUser, string password, Guid idUserUpdated);
+
+        public  Task ActivateAsync(Guid id, Guid idUserUpdated);
     }
 }

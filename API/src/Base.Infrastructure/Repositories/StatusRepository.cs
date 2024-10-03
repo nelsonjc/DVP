@@ -21,7 +21,7 @@ namespace TaskingSystem.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public Task DeleteAsync(Guid id)
+        public Task DeleteAsync(Guid id, Guid idUserUpdated)
         {
             throw new NotImplementedException();
         }

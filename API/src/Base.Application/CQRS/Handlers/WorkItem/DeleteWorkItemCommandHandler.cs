@@ -19,7 +19,7 @@ namespace TaskingSystem.Application.CQRS.Handlers
                 if (workItem == null)
                     throw new NotFoundException(nameof(WorkItem), command.IdTask);
 
-                await _repository.DeleteAsync(workItem.Id);
+                await _repository.DeleteAsync(workItem.Id, command.IdUserUpdated);
                 return ApiResponse<bool>.SuccessResponse(true); ;
             }
             catch (Exception ex)

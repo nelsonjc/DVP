@@ -15,18 +15,22 @@ namespace TaskingSystem.Infrastructure.Repositories
             _context = context;
         }
 
+        
+
         public async Task AddAsync(WorkItem entity)
         {
             await _context.WorkItems.AddAsync(entity);
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(Guid id)
+        public async Task DeleteAsync(Guid id, Guid idUserUpdated)
         {
             var WorkItemDb = await GetByIdAsync(id);
             if (WorkItemDb != null)
             {
                 WorkItemDb.Active = false;
+                WorkItemDb.IdUserUpdated = idUserUpdated;
+                WorkItemDb.DateUpdated = DateTime.UtcNow.AddHours(-5);
                 _context.WorkItems.Update(WorkItemDb);
                 await _context.SaveChangesAsync();
             }

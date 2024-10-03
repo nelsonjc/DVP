@@ -1,8 +1,8 @@
 ﻿namespace TaskingSystem.Application.CQRS.Commands
 {
-    public class DeleteWorkItemCommand
+    public class ActivateUserCommand
     {
-        public Guid IdTask { get; set; }
+        public Guid IdUser { get; set; }
         public Guid IdUserUpdated { get; set; }
     }
 }

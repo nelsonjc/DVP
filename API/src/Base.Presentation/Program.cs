@@ -5,17 +5,11 @@ using Serilog;
 using Serilog.Sinks.MSSqlServer;
 using TaskingSystem.Presentation.Middleware;
 using Serilog.Events;
-using FluentValidation;
-using FluentValidation.AspNetCore;
-using TaskingSystem.Application.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Aquí puedes agregar tus validadores y configuraciones de servicios
-builder.Services.AddFluentValidationAutoValidation();
-builder.Services.AddValidatorsFromAssemblyContaining<CreateUserCommandValidator>();
-builder.Services.AddValidatorsFromAssemblyContaining<CreateWorkItemCommandValidator>();
-builder.Services.AddValidatorsFromAssemblyContaining<CreateUserCommandValidator>();
+builder.RegisterValidator();
 
 
 builder.Services.AddControllers();
