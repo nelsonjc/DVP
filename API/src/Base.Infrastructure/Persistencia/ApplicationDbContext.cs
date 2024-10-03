@@ -222,10 +222,15 @@ namespace TaskingSystem.Infrastructure.Persistencia
                     IdRole = DataConstant.ROL_ADMIN_ID,
                     IdPermission = DataConstant.PERMISSION_T_D_ID
                 },
-                #endregion
+            #endregion
 
                 #region Permisos Rol Supervisor
                 // ○ Supervisor: Puede asignar tareas a los empleados y cambiar el estado de las tareas.
+                new RolePermission
+                {
+                    IdRole = DataConstant.ROL_SUPER_ID,
+                    IdPermission = DataConstant.PERMISSION_T_R_ID
+                },
                 new RolePermission
                 {
                     IdRole = DataConstant.ROL_SUPER_ID,
@@ -234,7 +239,17 @@ namespace TaskingSystem.Infrastructure.Persistencia
                 new RolePermission
                 {
                     IdRole = DataConstant.ROL_SUPER_ID,
+                    IdPermission = DataConstant.PERMISSION_T_U_ID
+                },
+                new RolePermission
+                {
+                    IdRole = DataConstant.ROL_SUPER_ID,
                     IdPermission = DataConstant.PERMISSION_T_CS_ID
+                },
+                new RolePermission
+                {
+                    IdRole = DataConstant.ROL_SUPER_ID,
+                    IdPermission = DataConstant.PERMISSION_T_C_ID
                 },
                 #endregion
 
