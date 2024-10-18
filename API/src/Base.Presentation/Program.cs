@@ -24,20 +24,20 @@ var conn = SwitchConnectionConfiguration.GetConnection();
 builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(conn, p => p.MigrationsAssembly("TaskingSystem.Presentation")));
 
 // Configuración de Serilog
-//Log.Logger = new LoggerConfiguration()
-//    .MinimumLevel.Information()
-//    .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
-//    .MinimumLevel.Override("System", LogEventLevel.Warning)
-//    .WriteTo.Console()
-//    .WriteTo.File("logs/app.txt", rollingInterval: RollingInterval.Day)
-//    .WriteTo.MSSqlServer(conn, new MSSqlServerSinkOptions
-//    {
-//        TableName = "Logs",
-//        SchemaName = "dbo",
-//        AutoCreateSqlTable = true
-//    })
-//    .WriteTo.Seq("http://localhost:5341")
-//    .CreateLogger();
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()
+    .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+    .MinimumLevel.Override("System", LogEventLevel.Warning)
+    .WriteTo.Console()
+    .WriteTo.File("logs/app.txt", rollingInterval: RollingInterval.Day)
+    .WriteTo.MSSqlServer(conn, new MSSqlServerSinkOptions
+    {
+        TableName = "Logs",
+        SchemaName = "dbo",
+        AutoCreateSqlTable = true
+    })
+    .WriteTo.Seq("http://localhost:5341")
+    .CreateLogger();
 
 builder.Logging.ClearProviders();
 builder.Logging.AddSerilog();

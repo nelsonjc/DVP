@@ -5,7 +5,7 @@ import { Task } from '../../../../core/models/task/task.model';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LocalStorageService } from '../../../../core/services/local-storage/local-storage.service';
 import { ModalNameEnum } from '../../../../core/enums/modal-name.enum';
-import { Subscription } from 'rxjs';
+import { Subscription, timestamp } from 'rxjs';
 import { ModalService } from '../../../../shared/services/modal/modal.service';
 import { Status } from '../../../../core/models/status/status.model';
 import { MasterService } from '../../../../core/services/master/master.service';
@@ -38,6 +38,7 @@ export class TaskFormComponent implements OnInit, OnDestroy {
   idUserLogin: string;
   statuses: Status[] = [];
   employees: User[] = [];
+  dateNow: Date = new Date(Date.now());
 
   private taskSubscription: Subscription | null = null;
   private modalSubscription: Subscription | null = null;
@@ -53,7 +54,6 @@ export class TaskFormComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-
     this.initForm();
 
     this.masterService.getByEntityName(EntityNameEnum.Task).subscribe(x => {
@@ -125,6 +125,11 @@ export class TaskFormComponent implements OnInit, OnDestroy {
         observation: ['', this.isUpdateMode ? Validators.required : null]
       });
     }
+  }
+
+  openCalendar(event: Event) {
+    const element = event.target as HTMLInputElement;
+    element.showPicker();  // Forzar la apertura del calendario
   }
 
   closeModal() {

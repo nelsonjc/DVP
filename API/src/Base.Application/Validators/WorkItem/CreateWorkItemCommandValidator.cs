@@ -18,7 +18,7 @@ namespace TaskingSystem.Application.Validators
 
             // Validación para el campo DueDate (Fecha de vencimiento)
             RuleFor(x => x.DueDate)
-                .GreaterThan(DateTime.Now).WithMessage("La fecha de vencimiento debe ser en el futuro.");
+                .GreaterThan(DateTime.Now.AddDays(-1)).WithMessage("La fecha de vencimiento debe ser en el futuro.");
 
             // Validación para el campo IdUser (Usuario asignado)
             RuleFor(x => x.IdUser)

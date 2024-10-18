@@ -9,7 +9,14 @@ export class ApiResponseHandlerService {
 
   // Método para manejar la respuesta de la API
   handleApiResponse(response: any) {
-    if (response.success || response.status === 200) {
+    if (response && response.status === 0) {
+      Swal.fire({
+        icon: 'error',
+        title: '¡Error! Servicio No Disponible',
+        text: 'Lo sentimos, pero el servicio no está disponible en este momento. Por favor, intenta nuevamente más tarde o contacta a tu administrador si el problema persiste.'
+      });
+    }
+    else if (response.success || response.status === 200) {
       // Manejo de la respuesta exitosa
       Swal.fire({
         icon: 'success',
@@ -82,7 +89,7 @@ export class ApiResponseHandlerService {
       Swal.fire({
         icon: 'error',
         title: 'Error',
-        text: response
+        text: response.message ? response.message : response
       });
     }
   }
